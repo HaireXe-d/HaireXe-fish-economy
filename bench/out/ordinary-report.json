@@ -1,0 +1,1542 @@
+{
+  "filtered": 23,
+  "metaTokens": 1060,
+  "sum": {
+    "requests": 7078,
+    "turns": 275,
+    "total": 2054161914,
+    "input": 6716885,
+    "output": 3510181,
+    "cacheRead": 2043934848,
+    "toolsTokens": 135010,
+    "toolCalls": 7266,
+    "toolResultRaw": 6853667,
+    "toolResultTrim": 2235313,
+    "trimTokens": 51045291,
+    "userMessages": 375,
+    "userChars": 214244,
+    "userRepeated": 3775
+  },
+  "gateSaved": 34045180,
+  "breakCost": 3173849.4022575645,
+  "net": 81916621.59774244,
+  "billable": 214620550.8,
+  "netBillable": 5335197.697742435,
+  "rows": [
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-446bae47-50de-4ad9-bef1-24c71e6ad3d6\\session.v4.jsonl.zstd",
+      "requests": 2327,
+      "turns": 54,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 1887141,
+        "output": 937430,
+        "cacheRead": 930262784,
+        "cacheWrite": 0,
+        "total": 933087355
+      },
+      "cacheHitRate": 0.9979754962700876,
+      "toolCallCount": 2305,
+      "toolCallsPerRequest": 0.99054576708208,
+      "topTools": [
+        [
+          "pwsh",
+          1317
+        ],
+        [
+          "edit",
+          337
+        ],
+        [
+          "read",
+          291
+        ],
+        [
+          "write",
+          271
+        ],
+        [
+          "grep",
+          44
+        ],
+        [
+          "present",
+          18
+        ],
+        [
+          "read_image",
+          7
+        ],
+        [
+          "list_agents",
+          7
+        ]
+      ],
+      "toolResultRawChars": 1425188,
+      "toolResultTrimChars": 156544,
+      "toolResultCompoundedTokens": 17090616,
+      "userMessages": 63,
+      "userAvgChars": 872.6984126984127,
+      "userRepeatedMessages": 3,
+      "userRepeatedChars": 2835,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-f19d86c9-d1ab-430f-abb8-2b23954f5183\\session.v4.jsonl.zstd",
+      "requests": 955,
+      "turns": 53,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 1291186,
+        "output": 625800,
+        "cacheRead": 336182016,
+        "cacheWrite": 0,
+        "total": 338099002
+      },
+      "cacheHitRate": 0.9961739599104524,
+      "toolCallCount": 904,
+      "toolCallsPerRequest": 0.9465968586387434,
+      "topTools": [
+        [
+          "pwsh",
+          433
+        ],
+        [
+          "read_image",
+          222
+        ],
+        [
+          "write",
+          63
+        ],
+        [
+          "job_output",
+          60
+        ],
+        [
+          "edit",
+          48
+        ],
+        [
+          "read",
+          37
+        ],
+        [
+          "present",
+          31
+        ],
+        [
+          "job_kill",
+          4
+        ]
+      ],
+      "toolResultRawChars": 373360,
+      "toolResultTrimChars": 72680,
+      "toolResultCompoundedTokens": 7165686,
+      "userMessages": 62,
+      "userAvgChars": 309.64516129032256,
+      "userRepeatedMessages": 2,
+      "userRepeatedChars": 545,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-249958a6-2638-4bb6-817d-9f7cbd1b6d5c\\session.v4.jsonl.zstd",
+      "requests": 892,
+      "turns": 46,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 1228945,
+        "output": 451643,
+        "cacheRead": 308901632,
+        "cacheWrite": 0,
+        "total": 310582220
+      },
+      "cacheHitRate": 0.9960373304306592,
+      "toolCallCount": 894,
+      "toolCallsPerRequest": 1.0022421524663676,
+      "topTools": [
+        [
+          "pwsh",
+          533
+        ],
+        [
+          "write",
+          167
+        ],
+        [
+          "read_image",
+          55
+        ],
+        [
+          "job_output",
+          47
+        ],
+        [
+          "edit",
+          37
+        ],
+        [
+          "present",
+          27
+        ],
+        [
+          "read",
+          9
+        ],
+        [
+          "ask_user_question",
+          5
+        ]
+      ],
+      "toolResultRawChars": 441569,
+      "toolResultTrimChars": 75425,
+      "toolResultCompoundedTokens": 4474688,
+      "userMessages": 58,
+      "userAvgChars": 331.6551724137931,
+      "userRepeatedMessages": 1,
+      "userRepeatedChars": 390,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-54be0c36-bfee-402a-9691-e41d79fc9446\\session.v4.jsonl.zstd",
+      "requests": 500,
+      "turns": 61,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 264778,
+        "output": 210143,
+        "cacheRead": 117431424,
+        "cacheWrite": 0,
+        "total": 117906345
+      },
+      "cacheHitRate": 0.9977503267267707,
+      "toolCallCount": 494,
+      "toolCallsPerRequest": 0.988,
+      "topTools": [
+        [
+          "pwsh",
+          273
+        ],
+        [
+          "read",
+          83
+        ],
+        [
+          "edit",
+          74
+        ],
+        [
+          "grep",
+          36
+        ],
+        [
+          "write",
+          13
+        ],
+        [
+          "todo_write",
+          5
+        ],
+        [
+          "ask_user_question",
+          4
+        ],
+        [
+          "web_fetch",
+          3
+        ]
+      ],
+      "toolResultRawChars": 489373,
+      "toolResultTrimChars": 145838,
+      "toolResultCompoundedTokens": 7346975,
+      "userMessages": 62,
+      "userAvgChars": 89.6774193548387,
+      "userRepeatedMessages": 2,
+      "userRepeatedChars": 5,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-86701a84-292f-427f-b3ab-e365ac1f56ed\\session.v4.jsonl.zstd",
+      "requests": 438,
+      "turns": 8,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 206892,
+        "output": 194426,
+        "cacheRead": 83557376,
+        "cacheWrite": 0,
+        "total": 83958694
+      },
+      "cacheHitRate": 0.9975300685490381,
+      "toolCallCount": 441,
+      "toolCallsPerRequest": 1.0068493150684932,
+      "topTools": [
+        [
+          "pwsh",
+          221
+        ],
+        [
+          "write",
+          149
+        ],
+        [
+          "edit",
+          27
+        ],
+        [
+          "todo_write",
+          20
+        ],
+        [
+          "read_image",
+          14
+        ],
+        [
+          "present",
+          6
+        ],
+        [
+          "ask_user_question",
+          2
+        ],
+        [
+          "load_workspace_dependencies",
+          1
+        ]
+      ],
+      "toolResultRawChars": 291739,
+      "toolResultTrimChars": 38883,
+      "toolResultCompoundedTokens": 1405186,
+      "userMessages": 12,
+      "userAvgChars": 298.5833333333333,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-4e3e8712-3c19-432d-8624-ad6a35466a32\\session.v4.jsonl.zstd",
+      "requests": 405,
+      "turns": 16,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 211434,
+        "output": 119912,
+        "cacheRead": 69103360,
+        "cacheWrite": 0,
+        "total": 69434706
+      },
+      "cacheHitRate": 0.9969496555093275,
+      "toolCallCount": 416,
+      "toolCallsPerRequest": 1.0271604938271606,
+      "topTools": [
+        [
+          "pwsh",
+          264
+        ],
+        [
+          "read",
+          70
+        ],
+        [
+          "edit",
+          32
+        ],
+        [
+          "grep",
+          20
+        ],
+        [
+          "write",
+          18
+        ],
+        [
+          "web_fetch",
+          5
+        ],
+        [
+          "todo_write",
+          3
+        ],
+        [
+          "ask_user_question",
+          2
+        ]
+      ],
+      "toolResultRawChars": 503087,
+      "toolResultTrimChars": 129169,
+      "toolResultCompoundedTokens": 2484783,
+      "userMessages": 19,
+      "userAvgChars": 240.68421052631578,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-4714b74b-90ba-4eb7-8914-3bd7f1c3b912\\session.v4.jsonl.zstd",
+      "requests": 358,
+      "turns": 8,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 175519,
+        "output": 126325,
+        "cacheRead": 58279808,
+        "cacheWrite": 0,
+        "total": 58581652
+      },
+      "cacheHitRate": 0.9969973822916087,
+      "toolCallCount": 365,
+      "toolCallsPerRequest": 1.0195530726256983,
+      "topTools": [
+        [
+          "pwsh",
+          205
+        ],
+        [
+          "job_output",
+          54
+        ],
+        [
+          "write",
+          50
+        ],
+        [
+          "edit",
+          29
+        ],
+        [
+          "read",
+          14
+        ],
+        [
+          "job_kill",
+          5
+        ],
+        [
+          "read_image",
+          3
+        ],
+        [
+          "load_workspace_dependencies",
+          1
+        ]
+      ],
+      "toolResultRawChars": 322746,
+      "toolResultTrimChars": 76697,
+      "toolResultCompoundedTokens": 713660,
+      "userMessages": 17,
+      "userAvgChars": 514.4117647058823,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-1fb2c522-51ff-496f-b001-6780c76c4793\\session.v4.jsonl.zstd",
+      "requests": 250,
+      "turns": 2,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 100479,
+        "output": 236707,
+        "cacheRead": 42368256,
+        "cacheWrite": 0,
+        "total": 42705442
+      },
+      "cacheHitRate": 0.997634047729465,
+      "toolCallCount": 262,
+      "toolCallsPerRequest": 1.048,
+      "topTools": [
+        [
+          "pwsh",
+          149
+        ],
+        [
+          "write",
+          68
+        ],
+        [
+          "read_image",
+          31
+        ],
+        [
+          "edit",
+          8
+        ],
+        [
+          "present",
+          2
+        ],
+        [
+          "read",
+          2
+        ],
+        [
+          "load_workspace_dependencies",
+          1
+        ],
+        [
+          "job_kill",
+          1
+        ]
+      ],
+      "toolResultRawChars": 105917,
+      "toolResultTrimChars": 0,
+      "toolResultCompoundedTokens": 0,
+      "userMessages": 6,
+      "userAvgChars": 551.1666666666666,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-6202c1c1-76d9-4923-8fab-ad023c6e69a0\\session.v4.jsonl.zstd",
+      "requests": 171,
+      "turns": 3,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 141816,
+        "output": 159290,
+        "cacheRead": 30349184,
+        "cacheWrite": 0,
+        "total": 30650290
+      },
+      "cacheHitRate": 0.9953489226329081,
+      "toolCallCount": 218,
+      "toolCallsPerRequest": 1.2748538011695907,
+      "topTools": [
+        [
+          "pwsh",
+          88
+        ],
+        [
+          "edit",
+          56
+        ],
+        [
+          "write",
+          35
+        ],
+        [
+          "read",
+          21
+        ],
+        [
+          "web_fetch",
+          6
+        ],
+        [
+          "list_agents",
+          5
+        ],
+        [
+          "subagent",
+          3
+        ],
+        [
+          "job_kill",
+          2
+        ]
+      ],
+      "toolResultRawChars": 316966,
+      "toolResultTrimChars": 133108,
+      "toolResultCompoundedTokens": 900690,
+      "userMessages": 13,
+      "userAvgChars": 3101.3076923076924,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-48bda7bf-6caf-4188-b7a4-53328c9b2c5b\\session.v4.jsonl.zstd",
+      "requests": 163,
+      "turns": 7,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 99968,
+        "output": 78351,
+        "cacheRead": 14587264,
+        "cacheWrite": 0,
+        "total": 14765583
+      },
+      "cacheHitRate": 0.993193543889005,
+      "toolCallCount": 173,
+      "toolCallsPerRequest": 1.0613496932515338,
+      "topTools": [
+        [
+          "pwsh",
+          132
+        ],
+        [
+          "read",
+          18
+        ],
+        [
+          "write",
+          10
+        ],
+        [
+          "edit",
+          6
+        ],
+        [
+          "todo_write",
+          4
+        ],
+        [
+          "grep",
+          2
+        ],
+        [
+          "present",
+          1
+        ]
+      ],
+      "toolResultRawChars": 207711,
+      "toolResultTrimChars": 38577,
+      "toolResultCompoundedTokens": 827838,
+      "userMessages": 11,
+      "userAvgChars": 340.72727272727275,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\6139adcc-371d-491d-8450-9350251b64b0\\session.v4.jsonl.zstd",
+      "requests": 85,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 157368,
+        "output": 92748,
+        "cacheRead": 11762304,
+        "cacheWrite": 0,
+        "total": 12012420
+      },
+      "cacheHitRate": 0.9867976232903053,
+      "toolCallCount": 115,
+      "toolCallsPerRequest": 1.3529411764705883,
+      "topTools": [
+        [
+          "read",
+          44
+        ],
+        [
+          "grep",
+          34
+        ],
+        [
+          "pwsh",
+          29
+        ],
+        [
+          "edit",
+          4
+        ],
+        [
+          "write",
+          2
+        ],
+        [
+          "todo_write",
+          1
+        ],
+        [
+          "send_message",
+          1
+        ]
+      ],
+      "toolResultRawChars": 514146,
+      "toolResultTrimChars": 305307,
+      "toolResultCompoundedTokens": 1838629,
+      "userMessages": 3,
+      "userAvgChars": 2003,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\995bdf0c-f832-42fb-a019-6cfb6667c70f\\session.v4.jsonl.zstd",
+      "requests": 60,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 302258,
+        "output": 91590,
+        "cacheRead": 11024896,
+        "cacheWrite": 0,
+        "total": 11418744
+      },
+      "cacheHitRate": 0.9733156272087411,
+      "toolCallCount": 87,
+      "toolCallsPerRequest": 1.45,
+      "topTools": [
+        [
+          "pwsh",
+          32
+        ],
+        [
+          "web_fetch",
+          27
+        ],
+        [
+          "read",
+          10
+        ],
+        [
+          "edit",
+          6
+        ],
+        [
+          "subagent",
+          4
+        ],
+        [
+          "grep",
+          3
+        ],
+        [
+          "write",
+          2
+        ],
+        [
+          "load_workspace_dependencies",
+          1
+        ]
+      ],
+      "toolResultRawChars": 506276,
+      "toolResultTrimChars": 371696,
+      "toolResultCompoundedTokens": 3072785,
+      "userMessages": 3,
+      "userAvgChars": 1788.6666666666667,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\41387c38-c1f4-4572-9144-7093b159c5f9\\session.v4.jsonl.zstd",
+      "requests": 57,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 287625,
+        "output": 70656,
+        "cacheRead": 11006464,
+        "cacheWrite": 0,
+        "total": 11364745
+      },
+      "cacheHitRate": 0.974533138529367,
+      "toolCallCount": 81,
+      "toolCallsPerRequest": 1.4210526315789473,
+      "topTools": [
+        [
+          "web_fetch",
+          36
+        ],
+        [
+          "pwsh",
+          23
+        ],
+        [
+          "read",
+          11
+        ],
+        [
+          "write",
+          7
+        ],
+        [
+          "edit",
+          3
+        ],
+        [
+          "send_message",
+          1
+        ]
+      ],
+      "toolResultRawChars": 544902,
+      "toolResultTrimChars": 395558,
+      "toolResultCompoundedTokens": 2596793,
+      "userMessages": 3,
+      "userAvgChars": 1761.6666666666667,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\0dd741c4-894c-4610-9b71-0c2aebdbe06e\\session.v4.jsonl.zstd",
+      "requests": 85,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 71613,
+        "output": 26422,
+        "cacheRead": 5307392,
+        "cacheWrite": 0,
+        "total": 5405427
+      },
+      "cacheHitRate": 0.9866865712153085,
+      "toolCallCount": 105,
+      "toolCallsPerRequest": 1.2352941176470589,
+      "topTools": [
+        [
+          "pwsh",
+          73
+        ],
+        [
+          "read",
+          17
+        ],
+        [
+          "grep",
+          13
+        ],
+        [
+          "job_kill",
+          1
+        ],
+        [
+          "send_message",
+          1
+        ]
+      ],
+      "toolResultRawChars": 194084,
+      "toolResultTrimChars": 81561,
+      "toolResultCompoundedTokens": 584446,
+      "userMessages": 3,
+      "userAvgChars": 1344.3333333333333,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-15fe300a-0419-416f-b6fc-a66e2f28364c\\session.v4.jsonl.zstd",
+      "requests": 77,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 76522,
+        "output": 26777,
+        "cacheRead": 5274368,
+        "cacheWrite": 0,
+        "total": 5377667
+      },
+      "cacheHitRate": 0.9856992014412556,
+      "toolCallCount": 95,
+      "toolCallsPerRequest": 1.2337662337662338,
+      "topTools": [
+        [
+          "pwsh",
+          31
+        ],
+        [
+          "read",
+          30
+        ],
+        [
+          "edit",
+          12
+        ],
+        [
+          "grep",
+          9
+        ],
+        [
+          "write",
+          9
+        ],
+        [
+          "glob",
+          2
+        ],
+        [
+          "read_image",
+          1
+        ],
+        [
+          "present",
+          1
+        ]
+      ],
+      "toolResultRawChars": 180225,
+      "toolResultTrimChars": 69747,
+      "toolResultCompoundedTokens": 333495,
+      "userMessages": 5,
+      "userAvgChars": 634,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\c7502412-2dce-4930-a64e-7672b04fd869\\session.v4.jsonl.zstd",
+      "requests": 44,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 98232,
+        "output": 13205,
+        "cacheRead": 3426944,
+        "cacheWrite": 0,
+        "total": 3538381
+      },
+      "cacheHitRate": 0.9721341572732822,
+      "toolCallCount": 70,
+      "toolCallsPerRequest": 1.5909090909090908,
+      "topTools": [
+        [
+          "read",
+          47
+        ],
+        [
+          "grep",
+          20
+        ],
+        [
+          "pwsh",
+          1
+        ],
+        [
+          "glob",
+          1
+        ],
+        [
+          "send_message",
+          1
+        ]
+      ],
+      "toolResultRawChars": 244707,
+      "toolResultTrimChars": 119334,
+      "toolResultCompoundedTokens": 118688,
+      "userMessages": 3,
+      "userAvgChars": 1362.6666666666667,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-1aa2a502-5245-436f-acca-aa798ccde9d7\\session.v4.jsonl.zstd",
+      "requests": 55,
+      "turns": 2,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 27565,
+        "output": 17154,
+        "cacheRead": 1641984,
+        "cacheWrite": 0,
+        "total": 1686703
+      },
+      "cacheHitRate": 0.9834895531667535,
+      "toolCallCount": 56,
+      "toolCallsPerRequest": 1.018181818181818,
+      "topTools": [
+        [
+          "pwsh",
+          49
+        ],
+        [
+          "job_output",
+          4
+        ],
+        [
+          "skill",
+          1
+        ],
+        [
+          "job_kill",
+          1
+        ],
+        [
+          "write",
+          1
+        ]
+      ],
+      "toolResultRawChars": 55014,
+      "toolResultTrimChars": 7336,
+      "toolResultCompoundedTokens": 39459,
+      "userMessages": 6,
+      "userAvgChars": 532.1666666666666,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-14e269ba-a0d3-4be5-8c70-e78dc15fa535\\session.v4.jsonl.zstd",
+      "requests": 48,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 29067,
+        "output": 8707,
+        "cacheRead": 1325440,
+        "cacheWrite": 0,
+        "total": 1363214
+      },
+      "cacheHitRate": 0.9785405317211354,
+      "toolCallCount": 62,
+      "toolCallsPerRequest": 1.2916666666666667,
+      "topTools": [
+        [
+          "pwsh",
+          43
+        ],
+        [
+          "read",
+          15
+        ],
+        [
+          "write",
+          3
+        ],
+        [
+          "pending_user_information",
+          1
+        ]
+      ],
+      "toolResultRawChars": 61116,
+      "toolResultTrimChars": 6526,
+      "toolResultCompoundedTokens": 42208,
+      "userMessages": 5,
+      "userAvgChars": 635.6,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-52e61b53-efa2-47a7-88e0-570cd4998b8b\\session.v4.jsonl.zstd",
+      "requests": 32,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 26157,
+        "output": 7685,
+        "cacheRead": 898304,
+        "cacheWrite": 0,
+        "total": 932146
+      },
+      "cacheHitRate": 0.9717056749825033,
+      "toolCallCount": 43,
+      "toolCallsPerRequest": 1.34375,
+      "topTools": [
+        [
+          "pwsh",
+          28
+        ],
+        [
+          "read_image",
+          6
+        ],
+        [
+          "job_output",
+          3
+        ],
+        [
+          "job_kill",
+          2
+        ],
+        [
+          "read",
+          1
+        ],
+        [
+          "load_workspace_dependencies",
+          1
+        ],
+        [
+          "web_search",
+          1
+        ],
+        [
+          "web_fetch",
+          1
+        ]
+      ],
+      "toolResultRawChars": 49649,
+      "toolResultTrimChars": 9537,
+      "toolResultCompoundedTokens": 6988,
+      "userMessages": 4,
+      "userAvgChars": 817.5,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-fabc4f29-c015-4782-b490-d632ca1c3498\\session.v4.jsonl.zstd",
+      "requests": 46,
+      "turns": 3,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 10454,
+        "output": 10363,
+        "cacheRead": 769280,
+        "cacheWrite": 0,
+        "total": 790097
+      },
+      "cacheHitRate": 0.9865928637201917,
+      "toolCallCount": 46,
+      "toolCallsPerRequest": 1,
+      "topTools": [
+        [
+          "pwsh",
+          25
+        ],
+        [
+          "job_output",
+          12
+        ],
+        [
+          "edit",
+          3
+        ],
+        [
+          "job_kill",
+          2
+        ],
+        [
+          "write",
+          2
+        ],
+        [
+          "load_workspace_dependencies",
+          1
+        ],
+        [
+          "ask_user_question",
+          1
+        ]
+      ],
+      "toolResultRawChars": 8217,
+      "toolResultTrimChars": 0,
+      "toolResultCompoundedTokens": 0,
+      "userMessages": 5,
+      "userAvgChars": 660.8,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-0d4c57ca-f3f1-4c75-9d52-0b128938ff88\\session.v4.jsonl.zstd",
+      "requests": 28,
+      "turns": 2,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 11150,
+        "output": 4631,
+        "cacheRead": 465280,
+        "cacheWrite": 0,
+        "total": 481061
+      },
+      "cacheHitRate": 0.9765967718237727,
+      "toolCallCount": 32,
+      "toolCallsPerRequest": 1.1428571428571428,
+      "topTools": [
+        [
+          "pwsh",
+          23
+        ],
+        [
+          "job_output",
+          4
+        ],
+        [
+          "read_image",
+          2
+        ],
+        [
+          "load_workspace_dependencies",
+          1
+        ],
+        [
+          "job_kill",
+          1
+        ],
+        [
+          "write",
+          1
+        ]
+      ],
+      "toolResultRawChars": 17611,
+      "toolResultTrimChars": 1790,
+      "toolResultCompoundedTokens": 1678,
+      "userMessages": 6,
+      "userAvgChars": 761,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-61f70609-cbc6-4b56-9113-4e2b0ccb535e\\session.v4.jsonl.zstd",
+      "requests": 1,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 843,
+        "output": 192,
+        "cacheRead": 9088,
+        "cacheWrite": 0,
+        "total": 10123
+      },
+      "cacheHitRate": 0.9151142885912799,
+      "toolCallCount": 2,
+      "toolCallsPerRequest": 2,
+      "topTools": [
+        [
+          "pwsh",
+          2
+        ]
+      ],
+      "toolResultRawChars": 64,
+      "toolResultTrimChars": 0,
+      "toolResultCompoundedTokens": 0,
+      "userMessages": 3,
+      "userAvgChars": 943,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-7e4af5ea-3421-4407-97cd-7745e8bef446\\session.v4.jsonl.zstd",
+      "requests": 1,
+      "turns": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4160,
+      "usage": {
+        "input": 9873,
+        "output": 24,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 9897
+      },
+      "cacheHitRate": 0,
+      "toolCallCount": 0,
+      "toolCallsPerRequest": 0,
+      "topTools": [],
+      "toolResultRawChars": 0,
+      "toolResultTrimChars": 0,
+      "toolResultCompoundedTokens": 0,
+      "userMessages": 3,
+      "userAvgChars": 902,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--"
+    }
+  ]
+}

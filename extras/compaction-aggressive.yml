@@ -1,0 +1,25 @@
+# 激进压缩 overlay（可选，不属于本插件）
+#
+# 用法：
+#   dsh --profile web --patch "C:\path\to\dsh-fish-economy\extras\compaction-aggressive.yml"
+# 或者把下面四行贴进 ~/.dsh/profiles/web/cordis.patch.yml 的末尾。
+#
+# 注意：
+#   1. 匹配的行会**整体替换** config，不是深合并 —— 所以这里把要保留的字段都写全。
+#   2. retainTokens 必须小于 contextWindow × thresholdRatio，否则压缩永远不会触发。
+#   3. 这是宿主自带的 compaction 与结果裁剪器，不是本插件的代码；关掉它只需删掉这段。
+#
+# 效果（本机实测，34 个会话）：长会话的历史体量显著下降，是"再往下省"的最大一刀；
+# 代价是早期细节更早被摘要，追问旧细节时需要重新读文件。
+
+- id: compaction-basic
+  config:
+    thresholdRatio: 0.25
+    retainTokens: 20000
+    retries: 1
+
+- id: tool-result-pruner
+  config:
+    thresholdChars: 8192
+    headChars: 4096
+    tailChars: 1024

@@ -1,0 +1,2749 @@
+{
+  "rows": [
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-446bae47-50de-4ad9-bef1-24c71e6ad3d6\\session.v4.jsonl.zstd",
+      "turns": 54,
+      "requests": 2327,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 13659490,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 1887141,
+        "output": 937430,
+        "cacheRead": 930262784,
+        "cacheWrite": 0,
+        "total": 933087355
+      },
+      "cacheHitRate": 0.9979754962700876,
+      "toolResults": {
+        "count": 2311,
+        "totalChars": 1425188,
+        "over2k": 145,
+        "maxChars": 16524
+      },
+      "trim": {
+        "prunedEvents": 70,
+        "rawChars": 156544,
+        "compoundedChars": 54689971,
+        "compoundedTokens": 17090616
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-f19d86c9-d1ab-430f-abb8-2b23954f5183\\session.v4.jsonl.zstd",
+      "turns": 53,
+      "requests": 955,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 5605850,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 1291186,
+        "output": 625800,
+        "cacheRead": 336182016,
+        "cacheWrite": 0,
+        "total": 338099002
+      },
+      "cacheHitRate": 0.9961739599104524,
+      "toolResults": {
+        "count": 907,
+        "totalChars": 373360,
+        "over2k": 36,
+        "maxChars": 21605
+      },
+      "trim": {
+        "prunedEvents": 20,
+        "rawChars": 72680,
+        "compoundedChars": 22930195,
+        "compoundedTokens": 7165686
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-249958a6-2638-4bb6-817d-9f7cbd1b6d5c\\session.v4.jsonl.zstd",
+      "turns": 46,
+      "requests": 892,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 5236040,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 1228945,
+        "output": 451643,
+        "cacheRead": 308901632,
+        "cacheWrite": 0,
+        "total": 310582220
+      },
+      "cacheHitRate": 0.9960373304306592,
+      "toolResults": {
+        "count": 898,
+        "totalChars": 441569,
+        "over2k": 43,
+        "maxChars": 23122
+      },
+      "trim": {
+        "prunedEvents": 23,
+        "rawChars": 75425,
+        "compoundedChars": 14319003,
+        "compoundedTokens": 4474688
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-54be0c36-bfee-402a-9691-e41d79fc9446\\session.v4.jsonl.zstd",
+      "turns": 61,
+      "requests": 500,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 2935000,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 264778,
+        "output": 210143,
+        "cacheRead": 117431424,
+        "cacheWrite": 0,
+        "total": 117906345
+      },
+      "cacheHitRate": 0.9977503267267707,
+      "toolResults": {
+        "count": 494,
+        "totalChars": 489373,
+        "over2k": 48,
+        "maxChars": 49931
+      },
+      "trim": {
+        "prunedEvents": 22,
+        "rawChars": 145838,
+        "compoundedChars": 23510321,
+        "compoundedTokens": 7346975
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-86701a84-292f-427f-b3ab-e365ac1f56ed\\session.v4.jsonl.zstd",
+      "turns": 8,
+      "requests": 438,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 2571060,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 206892,
+        "output": 194426,
+        "cacheRead": 83557376,
+        "cacheWrite": 0,
+        "total": 83958694
+      },
+      "cacheHitRate": 0.9975300685490381,
+      "toolResults": {
+        "count": 441,
+        "totalChars": 291739,
+        "over2k": 42,
+        "maxChars": 12134
+      },
+      "trim": {
+        "prunedEvents": 19,
+        "rawChars": 38883,
+        "compoundedChars": 4496594,
+        "compoundedTokens": 1405186
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-4e3e8712-3c19-432d-8624-ad6a35466a32\\session.v4.jsonl.zstd",
+      "turns": 16,
+      "requests": 405,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 2377350,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 211434,
+        "output": 119912,
+        "cacheRead": 69103360,
+        "cacheWrite": 0,
+        "total": 69434706
+      },
+      "cacheHitRate": 0.9969496555093275,
+      "toolResults": {
+        "count": 416,
+        "totalChars": 503087,
+        "over2k": 68,
+        "maxChars": 21235
+      },
+      "trim": {
+        "prunedEvents": 37,
+        "rawChars": 129169,
+        "compoundedChars": 7951305,
+        "compoundedTokens": 2484783
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-4714b74b-90ba-4eb7-8914-3bd7f1c3b912\\session.v4.jsonl.zstd",
+      "turns": 8,
+      "requests": 358,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 2101460,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 175519,
+        "output": 126325,
+        "cacheRead": 58279808,
+        "cacheWrite": 0,
+        "total": 58581652
+      },
+      "cacheHitRate": 0.9969973822916087,
+      "toolResults": {
+        "count": 365,
+        "totalChars": 322746,
+        "over2k": 39,
+        "maxChars": 49931
+      },
+      "trim": {
+        "prunedEvents": 22,
+        "rawChars": 76697,
+        "compoundedChars": 2283711,
+        "compoundedTokens": 713660
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-1fb2c522-51ff-496f-b001-6780c76c4793\\session.v4.jsonl.zstd",
+      "turns": 2,
+      "requests": 250,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 1467500,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 100479,
+        "output": 236707,
+        "cacheRead": 42368256,
+        "cacheWrite": 0,
+        "total": 42705442
+      },
+      "cacheHitRate": 0.997634047729465,
+      "toolResults": {
+        "count": 262,
+        "totalChars": 105917,
+        "over2k": 10,
+        "maxChars": 2731
+      },
+      "trim": {
+        "prunedEvents": 0,
+        "rawChars": 0,
+        "compoundedChars": 0,
+        "compoundedTokens": 0
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-6202c1c1-76d9-4923-8fab-ad023c6e69a0\\session.v4.jsonl.zstd",
+      "turns": 3,
+      "requests": 166,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 974420,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 140230,
+        "output": 156446,
+        "cacheRead": 28887680,
+        "cacheWrite": 0,
+        "total": 29184356
+      },
+      "cacheHitRate": 0.995169132052566,
+      "toolResults": {
+        "count": 210,
+        "totalChars": 313847,
+        "over2k": 43,
+        "maxChars": 23059
+      },
+      "trim": {
+        "prunedEvents": 30,
+        "rawChars": 133108,
+        "compoundedChars": 2882209,
+        "compoundedTokens": 900690
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-48bda7bf-6caf-4188-b7a4-53328c9b2c5b\\session.v4.jsonl.zstd",
+      "turns": 7,
+      "requests": 163,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 956810,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 99968,
+        "output": 78351,
+        "cacheRead": 14587264,
+        "cacheWrite": 0,
+        "total": 14765583
+      },
+      "cacheHitRate": 0.993193543889005,
+      "toolResults": {
+        "count": 173,
+        "totalChars": 207711,
+        "over2k": 28,
+        "maxChars": 9983
+      },
+      "trim": {
+        "prunedEvents": 16,
+        "rawChars": 38577,
+        "compoundedChars": 2649082,
+        "compoundedTokens": 827838
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\6139adcc-371d-491d-8450-9350251b64b0\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 85,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 498950,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 157368,
+        "output": 92748,
+        "cacheRead": 11762304,
+        "cacheWrite": 0,
+        "total": 12012420
+      },
+      "cacheHitRate": 0.9867976232903053,
+      "toolResults": {
+        "count": 115,
+        "totalChars": 514146,
+        "over2k": 63,
+        "maxChars": 35567
+      },
+      "trim": {
+        "prunedEvents": 50,
+        "rawChars": 305307,
+        "compoundedChars": 5883612,
+        "compoundedTokens": 1838629
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\995bdf0c-f832-42fb-a019-6cfb6667c70f\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 60,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 352200,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 302258,
+        "output": 91590,
+        "cacheRead": 11024896,
+        "cacheWrite": 0,
+        "total": 11418744
+      },
+      "cacheHitRate": 0.9733156272087411,
+      "toolResults": {
+        "count": 87,
+        "totalChars": 506276,
+        "over2k": 37,
+        "maxChars": 49932
+      },
+      "trim": {
+        "prunedEvents": 33,
+        "rawChars": 371696,
+        "compoundedChars": 9832911,
+        "compoundedTokens": 3072785
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\41387c38-c1f4-4572-9144-7093b159c5f9\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 57,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 334590,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 287625,
+        "output": 70656,
+        "cacheRead": 11006464,
+        "cacheWrite": 0,
+        "total": 11364745
+      },
+      "cacheHitRate": 0.974533138529367,
+      "toolResults": {
+        "count": 81,
+        "totalChars": 544902,
+        "over2k": 43,
+        "maxChars": 49932
+      },
+      "trim": {
+        "prunedEvents": 37,
+        "rawChars": 395558,
+        "compoundedChars": 8309739,
+        "compoundedTokens": 2596793
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\0dd741c4-894c-4610-9b71-0c2aebdbe06e\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 85,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 498950,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 71613,
+        "output": 26422,
+        "cacheRead": 5307392,
+        "cacheWrite": 0,
+        "total": 5405427
+      },
+      "cacheHitRate": 0.9866865712153085,
+      "toolResults": {
+        "count": 105,
+        "totalChars": 194084,
+        "over2k": 23,
+        "maxChars": 16790
+      },
+      "trim": {
+        "prunedEvents": 18,
+        "rawChars": 81561,
+        "compoundedChars": 1870227,
+        "compoundedTokens": 584446
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-15fe300a-0419-416f-b6fc-a66e2f28364c\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 77,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 451990,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 76522,
+        "output": 26777,
+        "cacheRead": 5274368,
+        "cacheWrite": 0,
+        "total": 5377667
+      },
+      "cacheHitRate": 0.9856992014412556,
+      "toolResults": {
+        "count": 95,
+        "totalChars": 180225,
+        "over2k": 24,
+        "maxChars": 15711
+      },
+      "trim": {
+        "prunedEvents": 14,
+        "rawChars": 69747,
+        "compoundedChars": 1067185,
+        "compoundedTokens": 333495
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\c7502412-2dce-4930-a64e-7672b04fd869\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 44,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 258280,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 98232,
+        "output": 13205,
+        "cacheRead": 3426944,
+        "cacheWrite": 0,
+        "total": 3538381
+      },
+      "cacheHitRate": 0.9721341572732822,
+      "toolResults": {
+        "count": 70,
+        "totalChars": 244707,
+        "over2k": 32,
+        "maxChars": 34495
+      },
+      "trim": {
+        "prunedEvents": 18,
+        "rawChars": 119334,
+        "compoundedChars": 379800,
+        "compoundedTokens": 118688
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-1aa2a502-5245-436f-acca-aa798ccde9d7\\session.v4.jsonl.zstd",
+      "turns": 2,
+      "requests": 55,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 322850,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 27565,
+        "output": 17154,
+        "cacheRead": 1641984,
+        "cacheWrite": 0,
+        "total": 1686703
+      },
+      "cacheHitRate": 0.9834895531667535,
+      "toolResults": {
+        "count": 56,
+        "totalChars": 55014,
+        "over2k": 9,
+        "maxChars": 6728
+      },
+      "trim": {
+        "prunedEvents": 6,
+        "rawChars": 7336,
+        "compoundedChars": 126270,
+        "compoundedTokens": 39459
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-14e269ba-a0d3-4be5-8c70-e78dc15fa535\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 48,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 281760,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 29067,
+        "output": 8707,
+        "cacheRead": 1325440,
+        "cacheWrite": 0,
+        "total": 1363214
+      },
+      "cacheHitRate": 0.9785405317211354,
+      "toolResults": {
+        "count": 62,
+        "totalChars": 61116,
+        "over2k": 10,
+        "maxChars": 5288
+      },
+      "trim": {
+        "prunedEvents": 6,
+        "rawChars": 6526,
+        "compoundedChars": 135065,
+        "compoundedTokens": 42208
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-52e61b53-efa2-47a7-88e0-570cd4998b8b\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 32,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 187840,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 26157,
+        "output": 7685,
+        "cacheRead": 898304,
+        "cacheWrite": 0,
+        "total": 932146
+      },
+      "cacheHitRate": 0.9717056749825033,
+      "toolResults": {
+        "count": 43,
+        "totalChars": 49649,
+        "over2k": 8,
+        "maxChars": 8120
+      },
+      "trim": {
+        "prunedEvents": 3,
+        "rawChars": 9537,
+        "compoundedChars": 22363,
+        "compoundedTokens": 6988
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-fabc4f29-c015-4782-b490-d632ca1c3498\\session.v4.jsonl.zstd",
+      "turns": 3,
+      "requests": 46,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 270020,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 10454,
+        "output": 10363,
+        "cacheRead": 769280,
+        "cacheWrite": 0,
+        "total": 790097
+      },
+      "cacheHitRate": 0.9865928637201917,
+      "toolResults": {
+        "count": 46,
+        "totalChars": 8217,
+        "over2k": 0,
+        "maxChars": 1072
+      },
+      "trim": {
+        "prunedEvents": 0,
+        "rawChars": 0,
+        "compoundedChars": 0,
+        "compoundedTokens": 0
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-0d4c57ca-f3f1-4c75-9d52-0b128938ff88\\session.v4.jsonl.zstd",
+      "turns": 2,
+      "requests": 28,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 164360,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 11150,
+        "output": 4631,
+        "cacheRead": 465280,
+        "cacheWrite": 0,
+        "total": 481061
+      },
+      "cacheHitRate": 0.9765967718237727,
+      "toolResults": {
+        "count": 32,
+        "totalChars": 17611,
+        "over2k": 2,
+        "maxChars": 4790
+      },
+      "trim": {
+        "prunedEvents": 1,
+        "rawChars": 1790,
+        "compoundedChars": 5370,
+        "compoundedTokens": 1678
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-61f70609-cbc6-4b56-9113-4e2b0ccb535e\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 5870,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 843,
+        "output": 192,
+        "cacheRead": 9088,
+        "cacheWrite": 0,
+        "total": 10123
+      },
+      "cacheHitRate": 0.9151142885912799,
+      "toolResults": {
+        "count": 2,
+        "totalChars": 64,
+        "over2k": 0,
+        "maxChars": 40
+      },
+      "trim": {
+        "prunedEvents": 0,
+        "rawChars": 0,
+        "compoundedChars": 0,
+        "compoundedTokens": 0
+      },
+      "toolCalls": []
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-Documents-deepseek-harness-default-workspace--\\session-7e4af5ea-3421-4407-97cd-7745e8bef446\\session.v4.jsonl.zstd",
+      "turns": 1,
+      "requests": 1,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "metaTokens": 0,
+      "gateSavedPerRequest": 5870,
+      "gateSavedTotal": 5870,
+      "systemTokens": 4160,
+      "systemChars": 16428,
+      "groups": [
+        {
+          "id": "fs",
+          "tools": 6,
+          "tokens": 1093
+        },
+        {
+          "id": "shell",
+          "tools": 1,
+          "tokens": 876
+        },
+        {
+          "id": "jobs",
+          "tools": 3,
+          "tokens": 309
+        },
+        {
+          "id": "web",
+          "tools": 2,
+          "tokens": 158
+        },
+        {
+          "id": "delegate",
+          "tools": 6,
+          "tokens": 1841
+        },
+        {
+          "id": "plan",
+          "tools": 2,
+          "tokens": 350
+        },
+        {
+          "id": "goal",
+          "tools": 3,
+          "tokens": 460
+        },
+        {
+          "id": "interact",
+          "tools": 2,
+          "tokens": 531
+        },
+        {
+          "id": "skill",
+          "tools": 1,
+          "tokens": 89
+        },
+        {
+          "id": "deps",
+          "tools": 1,
+          "tokens": 163
+        }
+      ],
+      "topTools": [
+        {
+          "name": "workflow",
+          "tokens": 882
+        },
+        {
+          "name": "pwsh",
+          "tokens": 876
+        },
+        {
+          "name": "ask_user_question",
+          "tokens": 328
+        },
+        {
+          "name": "edit",
+          "tokens": 283
+        },
+        {
+          "name": "subagent_fork",
+          "tokens": 280
+        },
+        {
+          "name": "update_goal",
+          "tokens": 259
+        },
+        {
+          "name": "subagent",
+          "tokens": 254
+        },
+        {
+          "name": "todo_write",
+          "tokens": 225
+        }
+      ],
+      "usage": {
+        "input": 9873,
+        "output": 24,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 9897
+      },
+      "cacheHitRate": 0,
+      "toolResults": {
+        "count": 0,
+        "totalChars": 0,
+        "over2k": 0,
+        "maxChars": 0
+      },
+      "trim": {
+        "prunedEvents": 0,
+        "rawChars": 0,
+        "compoundedChars": 0,
+        "compoundedTokens": 0
+      },
+      "toolCalls": []
+    }
+  ],
+  "sum": {
+    "requests": 7073,
+    "toolsTokens": 135010,
+    "gateSaved": 41518510,
+    "total": 2052695980,
+    "output": 3507337,
+    "toolResultChars": 6850548
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "dsh-fish-economy",
+  "version": "0.1.0",
+  "description": "鱼缸经济学：工具懒加载（tool_list）+ 上下文入口裁剪 + 原生批量文件操作，一个插件砍掉 DSH 请求里三处重复开销，自带 token 账本。",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon.svg": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "bench",
+    "configs",
+    "docs",
+    "extras",
+    "locale",
+    "scripts",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "NOTICE.md",
+    "LICENSE"
+  ],
+  "icon": "./icon.svg",
+  "meta": {
+    "title": "养鱼电费",
+    "description": "少带工具说明书、长输出先剪短、记忆太长自动压缩。QQ 鱼和 B 站鱼都适用。"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "token",
+    "context",
+    "lazy-tools",
+    "tool-gate"
+  ],
+  "scripts": {
+    "test": "node --test \"tests/*.test.mjs\"",
+    "bench:sessions": "node bench/analyze-sessions.mjs",
+    "bench:sim": "node bench/simulate.mjs",
+    "bench:dup": "node bench/dup-stats.mjs",
+    "bench:whale": "node bench/whale-report.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

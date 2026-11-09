@@ -1,0 +1,7 @@
+# 鱼缸经济学 bundle 层：一整行挂上 Host 半边。
+# 客户端卡片（如果以后加）由 package.json 的 dsh.client 清单发现，不写在这里。
+- insert:
+    - id: fish-economy
+      name: 'dsh-fish-economy'
+      config:
+        enabled: true

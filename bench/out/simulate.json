@@ -1,0 +1,16 @@
+{
+  "metaTokens": 1060,
+  "cacheWeight": 0.1,
+  "sessions": 34,
+  "requests": 13476,
+  "baselineTools": 199580,
+  "baselineTotal": 3823000475,
+  "billableTotal": 395482522.99999994,
+  "gateSaved": 64819560,
+  "breakCost": 5274819.112932233,
+  "netGate": 140252491.8870678,
+  "trimTokens": 80707751,
+  "netGateEffective": 9277911.987067772,
+  "breakCostEffective": 5274819.112932233,
+  "generatedAt": "2026-11-09T10:39:57.602Z"
+}

@@ -1,0 +1,19 @@
+# QQ 养鱼 / B 站养鱼（会读写日记、会跑命令的那条鱼）
+#
+# 用法：整段复制到 ~/.dsh/profiles/web/cordis.patch.yml 的末尾，保存后重启 DSH。
+# 没有这一段的话，插件会按"默认配置"跑（工具闸门开、裁剪开、预算 200K），
+# 但不会自动套上养鱼专门的那几个值。
+
+- id: fish-economy
+  config:
+    enabled: true
+    fish:
+      enabled: true
+      preset: work        # fs + shell 常开，其它八组睡觉
+    trim:
+      enabled: true
+      pruneToolResultChars: 2500   # 单条工具输出超过 2500 字就掐头去尾
+    budget:
+      compactAtTokens: 150000      # 上下文超过 15 万就压一次（默认 20 万）
+    gate:
+      autoEnable: true             # 你说"搜一下/看一下"时它会顺手把工具叫醒

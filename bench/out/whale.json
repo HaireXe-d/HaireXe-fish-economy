@@ -1,0 +1,775 @@
+{
+  "filtered": 11,
+  "metaTokens": 1060,
+  "sum": {
+    "requests": 6469,
+    "turns": 1168,
+    "total": 1786150631,
+    "input": 3017998,
+    "output": 1485017,
+    "cacheRead": 1781647616,
+    "toolsTokens": 64570,
+    "toolCalls": 5367,
+    "toolResultRaw": 3402418,
+    "toolResultTrim": 978100,
+    "trimTokens": 29719808,
+    "userMessages": 1212,
+    "userChars": 822904,
+    "userRepeated": 37100
+  },
+  "gateSaved": 31115890,
+  "breakCost": 2150869.457810217,
+  "net": 58684828.542189784,
+  "billable": 182667776.60000002,
+  "netBillable": 3932700.3421897837,
+  "rows": [
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\914361b0-9168-4fa3-be41-064b8fad5afe\\session.v4.jsonl.zstd",
+      "requests": 1153,
+      "turns": 75,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 406933,
+        "output": 386566,
+        "cacheRead": 426577408,
+        "cacheWrite": 0,
+        "total": 427370907
+      },
+      "cacheHitRate": 0.9990469603661648,
+      "toolCallCount": 1090,
+      "toolCallsPerRequest": 0.9453599306157849,
+      "topTools": [
+        [
+          "pwsh",
+          646
+        ],
+        [
+          "edit",
+          226
+        ],
+        [
+          "read",
+          111
+        ],
+        [
+          "write",
+          72
+        ],
+        [
+          "web_fetch",
+          9
+        ],
+        [
+          "todo_write",
+          5
+        ],
+        [
+          "job_kill",
+          4
+        ],
+        [
+          "web_search",
+          4
+        ]
+      ],
+      "toolResultRawChars": 565296,
+      "toolResultTrimChars": 156223,
+      "toolResultCompoundedTokens": 5974327,
+      "userMessages": 79,
+      "userAvgChars": 612.2405063291139,
+      "userRepeatedMessages": 3,
+      "userRepeatedChars": 1756,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\9fd19937-71e5-47e8-bbdd-dfd4f9f08f24\\session.v4.jsonl.zstd",
+      "requests": 1154,
+      "turns": 215,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 496788,
+        "output": 275284,
+        "cacheRead": 409636096,
+        "cacheWrite": 0,
+        "total": 410408168
+      },
+      "cacheHitRate": 0.9987887145377009,
+      "toolCallCount": 944,
+      "toolCallsPerRequest": 0.8180242634315424,
+      "topTools": [
+        [
+          "pwsh",
+          624
+        ],
+        [
+          "read",
+          159
+        ],
+        [
+          "edit",
+          87
+        ],
+        [
+          "grep",
+          27
+        ],
+        [
+          "write",
+          20
+        ],
+        [
+          "read_image",
+          16
+        ],
+        [
+          "todo_write",
+          8
+        ],
+        [
+          "ask_user_question",
+          2
+        ]
+      ],
+      "toolResultRawChars": 571710,
+      "toolResultTrimChars": 75592,
+      "toolResultCompoundedTokens": 4869133,
+      "userMessages": 219,
+      "userAvgChars": 672.1324200913242,
+      "userRepeatedMessages": 16,
+      "userRepeatedChars": 16959,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\07d93c0e-7ee3-48bc-a8af-1b0ddf0e80d3\\session.v4.jsonl.zstd",
+      "requests": 1296,
+      "turns": 284,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 497199,
+        "output": 229198,
+        "cacheRead": 364660224,
+        "cacheWrite": 0,
+        "total": 365386621
+      },
+      "cacheHitRate": 0.9986383982121596,
+      "toolCallCount": 1021,
+      "toolCallsPerRequest": 0.7878086419753086,
+      "topTools": [
+        [
+          "pwsh",
+          594
+        ],
+        [
+          "read",
+          187
+        ],
+        [
+          "write",
+          97
+        ],
+        [
+          "edit",
+          91
+        ],
+        [
+          "grep",
+          43
+        ],
+        [
+          "read_image",
+          7
+        ],
+        [
+          "glob",
+          1
+        ],
+        [
+          "job_output",
+          1
+        ]
+      ],
+      "toolResultRawChars": 495545,
+      "toolResultTrimChars": 78017,
+      "toolResultCompoundedTokens": 10986526,
+      "userMessages": 288,
+      "userAvgChars": 619.3576388888889,
+      "userRepeatedMessages": 16,
+      "userRepeatedChars": 11225,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\5d368f84-c0d5-4f52-bdd2-115a78dac2ee\\session.v4.jsonl.zstd",
+      "requests": 1076,
+      "turns": 137,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 417076,
+        "output": 235642,
+        "cacheRead": 338456064,
+        "cacheWrite": 0,
+        "total": 339108782
+      },
+      "cacheHitRate": 0.9987692267377698,
+      "toolCallCount": 957,
+      "toolCallsPerRequest": 0.8894052044609665,
+      "topTools": [
+        [
+          "pwsh",
+          699
+        ],
+        [
+          "read",
+          119
+        ],
+        [
+          "edit",
+          86
+        ],
+        [
+          "write",
+          26
+        ],
+        [
+          "grep",
+          18
+        ],
+        [
+          "read_image",
+          5
+        ],
+        [
+          "glob",
+          4
+        ]
+      ],
+      "toolResultRawChars": 468617,
+      "toolResultTrimChars": 61755,
+      "toolResultCompoundedTokens": 1869318,
+      "userMessages": 141,
+      "userAvgChars": 631.0283687943263,
+      "userRepeatedMessages": 1,
+      "userRepeatedChars": 390,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\c747fd01-c645-4a69-8caf-d19ec174e763\\session.v4.jsonl.zstd",
+      "requests": 448,
+      "turns": 135,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 234428,
+        "output": 66607,
+        "cacheRead": 74620544,
+        "cacheWrite": 0,
+        "total": 74921579
+      },
+      "cacheHitRate": 0.9968682374231601,
+      "toolCallCount": 314,
+      "toolCallsPerRequest": 0.7008928571428571,
+      "topTools": [
+        [
+          "pwsh",
+          242
+        ],
+        [
+          "edit",
+          28
+        ],
+        [
+          "read",
+          27
+        ],
+        [
+          "grep",
+          7
+        ],
+        [
+          "job_output",
+          5
+        ],
+        [
+          "write",
+          3
+        ],
+        [
+          "read_image",
+          2
+        ]
+      ],
+      "toolResultRawChars": 228006,
+      "toolResultTrimChars": 114976,
+      "toolResultCompoundedTokens": 2209501,
+      "userMessages": 139,
+      "userAvgChars": 737.3956834532374,
+      "userRepeatedMessages": 1,
+      "userRepeatedChars": 704,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\a89b48a0-f95a-4d46-8fff-cc8612be40fd\\session.v4.jsonl.zstd",
+      "requests": 360,
+      "turns": 60,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 217510,
+        "output": 105390,
+        "cacheRead": 72432768,
+        "cacheWrite": 0,
+        "total": 72755668
+      },
+      "cacheHitRate": 0.9970060678914402,
+      "toolCallCount": 306,
+      "toolCallsPerRequest": 0.85,
+      "topTools": [
+        [
+          "pwsh",
+          173
+        ],
+        [
+          "edit",
+          62
+        ],
+        [
+          "read",
+          47
+        ],
+        [
+          "grep",
+          11
+        ],
+        [
+          "write",
+          9
+        ],
+        [
+          "todo_write",
+          2
+        ],
+        [
+          "ask_user_question",
+          1
+        ],
+        [
+          "present",
+          1
+        ]
+      ],
+      "toolResultRawChars": 344218,
+      "toolResultTrimChars": 175556,
+      "toolResultCompoundedTokens": 1099110,
+      "userMessages": 64,
+      "userAvgChars": 742.125,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\bd2995a7-4a85-436e-a8c1-bd71ad501fa6\\session.v4.jsonl.zstd",
+      "requests": 325,
+      "turns": 91,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 318938,
+        "output": 89452,
+        "cacheRead": 41056512,
+        "cacheWrite": 0,
+        "total": 41464902
+      },
+      "cacheHitRate": 0.9922916125383531,
+      "toolCallCount": 241,
+      "toolCallsPerRequest": 0.7415384615384616,
+      "topTools": [
+        [
+          "pwsh",
+          156
+        ],
+        [
+          "edit",
+          45
+        ],
+        [
+          "read",
+          24
+        ],
+        [
+          "write",
+          7
+        ],
+        [
+          "grep",
+          7
+        ],
+        [
+          "glob",
+          1
+        ],
+        [
+          "read_image",
+          1
+        ]
+      ],
+      "toolResultRawChars": 171583,
+      "toolResultTrimChars": 48678,
+      "toolResultCompoundedTokens": 841384,
+      "userMessages": 95,
+      "userAvgChars": 658.0631578947368,
+      "userRepeatedMessages": 4,
+      "userRepeatedChars": 2510,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\cfc943c5-44f0-4aa0-b349-42cfe54065b2\\session.v4.jsonl.zstd",
+      "requests": 248,
+      "turns": 93,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 121437,
+        "output": 24857,
+        "cacheRead": 19144704,
+        "cacheWrite": 0,
+        "total": 19290998
+      },
+      "cacheHitRate": 0.9936968695495377,
+      "toolCallCount": 156,
+      "toolCallsPerRequest": 0.6290322580645161,
+      "topTools": [
+        [
+          "pwsh",
+          132
+        ],
+        [
+          "read",
+          10
+        ],
+        [
+          "edit",
+          10
+        ],
+        [
+          "write",
+          3
+        ],
+        [
+          "grep",
+          1
+        ]
+      ],
+      "toolResultRawChars": 112507,
+      "toolResultTrimChars": 38026,
+      "toolResultCompoundedTokens": 731905,
+      "userMessages": 97,
+      "userAvgChars": 663.4536082474227,
+      "userRepeatedMessages": 3,
+      "userRepeatedChars": 2111,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\a75d55d4-1bf3-4ea3-921b-aa640a43d67d\\session.v4.jsonl.zstd",
+      "requests": 157,
+      "turns": 49,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 124964,
+        "output": 22080,
+        "cacheRead": 16593536,
+        "cacheWrite": 0,
+        "total": 16740580
+      },
+      "cacheHitRate": 0.9925254059873793,
+      "toolCallCount": 113,
+      "toolCallsPerRequest": 0.7197452229299363,
+      "topTools": [
+        [
+          "pwsh",
+          78
+        ],
+        [
+          "read",
+          13
+        ],
+        [
+          "edit",
+          11
+        ],
+        [
+          "write",
+          7
+        ],
+        [
+          "glob",
+          2
+        ],
+        [
+          "ask_user_question",
+          1
+        ],
+        [
+          "grep",
+          1
+        ]
+      ],
+      "toolResultRawChars": 147867,
+      "toolResultTrimChars": 109661,
+      "toolResultCompoundedTokens": 196340,
+      "userMessages": 53,
+      "userAvgChars": 815.3584905660377,
+      "userRepeatedMessages": 3,
+      "userRepeatedChars": 1445,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\7df6a4e9-1474-41ba-8c56-cafb29ce06a2\\session.v4.jsonl.zstd",
+      "requests": 142,
+      "turns": 18,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 102768,
+        "output": 27427,
+        "cacheRead": 11524480,
+        "cacheWrite": 0,
+        "total": 11654675
+      },
+      "cacheHitRate": 0.9911614511017568,
+      "toolCallCount": 125,
+      "toolCallsPerRequest": 0.8802816901408451,
+      "topTools": [
+        [
+          "pwsh",
+          67
+        ],
+        [
+          "read",
+          26
+        ],
+        [
+          "edit",
+          16
+        ],
+        [
+          "grep",
+          8
+        ],
+        [
+          "write",
+          6
+        ],
+        [
+          "glob",
+          1
+        ],
+        [
+          "ask_user_question",
+          1
+        ]
+      ],
+      "toolResultRawChars": 162239,
+      "toolResultTrimChars": 71812,
+      "toolResultCompoundedTokens": 544010,
+      "userMessages": 22,
+      "userAvgChars": 1071.2272727272727,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    },
+    {
+      "file": "<dsh-home>\\.dsh\\sessions\\--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--\\8bfa01ca-b143-416c-8f5a-3c317cfa2c5a\\session.v4.jsonl.zstd",
+      "requests": 110,
+      "turns": 11,
+      "tools": 27,
+      "toolsTokens": 5870,
+      "groups": {
+        "fs": 1093,
+        "shell": 876,
+        "jobs": 309,
+        "web": 158,
+        "delegate": 1841,
+        "plan": 350,
+        "goal": 460,
+        "interact": 531,
+        "skill": 89,
+        "deps": 163
+      },
+      "systemTokens": 4152,
+      "usage": {
+        "input": 79957,
+        "output": 22514,
+        "cacheRead": 6945280,
+        "cacheWrite": 0,
+        "total": 7047751
+      },
+      "cacheHitRate": 0.9886186046107769,
+      "toolCallCount": 100,
+      "toolCallsPerRequest": 0.9090909090909091,
+      "topTools": [
+        [
+          "pwsh",
+          68
+        ],
+        [
+          "read",
+          14
+        ],
+        [
+          "edit",
+          12
+        ],
+        [
+          "write",
+          4
+        ],
+        [
+          "grep",
+          2
+        ]
+      ],
+      "toolResultRawChars": 134830,
+      "toolResultTrimChars": 47804,
+      "toolResultCompoundedTokens": 398254,
+      "userMessages": 15,
+      "userAvgChars": 1089.6,
+      "userRepeatedMessages": 0,
+      "userRepeatedChars": 0,
+      "workspace": "--C-Users-<user>~FF08~65E0~5BC6~7801~FF09-.dsh-whale-work--"
+    }
+  ]
+}
