@@ -12,7 +12,7 @@ import { createFakeCtx } from './fake-ctx.mjs'
 
 /**
  * 造一个带若干"宿主工具"的假环境。
- * @param {object} [config] 插件配置。
+ * @param {object} [config] 插件配置（默认打开闸门，方便测闸门行为）。
  * @returns {object} 环境。
  */
 function setup(config = {}) {
@@ -29,7 +29,7 @@ function setup(config = {}) {
       },
     })
   }
-  apply(fake.ctx, config)
+  apply(fake.ctx, { gate: { enabled: true }, ops: { enabled: true }, ...config })
   const agent = fake.agent('session-test-1', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   return { ...fake, agent }
@@ -161,7 +161,7 @@ test('ops：读目录 / 读文件 / grep 一把过，越界路径被拒', async 
   const dir = mkdtempSync(join(tmpdir(), 'fish-ops-'))
   writeFileSync(join(dir, 'a.txt'), 'hello\nworld\n', 'utf8')
   const fake = createFakeCtx()
-  apply(fake.ctx, {})
+  apply(fake.ctx, { ops: { enabled: true } })
   const agent = fake.agent('s3', dir)
   const text = await fake.registry.get('ops').execute({
     calls: [
@@ -181,7 +181,7 @@ test('ops：读目录 / 读文件 / grep 一把过，越界路径被拒', async 
 test('ops：默认只读，write 被拒绝', async () => {
   const dir = mkdtempSync(join(tmpdir(), 'fish-ops-'))
   const fake = createFakeCtx()
-  apply(fake.ctx, {})
+  apply(fake.ctx, { ops: { enabled: true } })
   const agent = fake.agent('s4', dir)
   const text = await fake.registry.get('ops').execute({ calls: [{ op: 'write', path: 'b.txt', content: 'x' }] }, { agent })
   assert.match(text, /ops\.writes 未开启/)
@@ -199,7 +199,7 @@ test('预算闸：上下文超过阈值时调用 compactNow', async () => {
       },
     },
   })
-  apply(fake.ctx, { budget: { compactAtTokens: 100000, minIntervalMs: 0 } })
+  apply(fake.ctx, { budget: { enabled: true, compactAtTokens: 100000, minIntervalMs: 0 } })
   const agent = fake.agent('s9', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   fake.broadcast('session/event', agent.session, {
@@ -225,7 +225,7 @@ test('预算闸：上下文低于阈值时不动作', async () => {
       },
     },
   })
-  apply(fake.ctx, { budget: { compactAtTokens: 100000, minIntervalMs: 0 } })
+  apply(fake.ctx, { budget: { enabled: true, compactAtTokens: 100000, minIntervalMs: 0 } })
   const agent = fake.agent('s10', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   fake.broadcast('session/event', agent.session, {
@@ -247,7 +247,7 @@ test('预算闸：compactNow 抛 busy 时不影响会话', async () => {
       },
     },
   })
-  apply(fake.ctx, { budget: { compactAtTokens: 1000, minIntervalMs: 0 } })
+  apply(fake.ctx, { budget: { enabled: true, compactAtTokens: 1000, minIntervalMs: 0 } })
   const agent = fake.agent('s11', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   fake.broadcast('session/event', agent.session, { type: 'assistant/message', data: { usage: { inputTokens: 5000 } } })
@@ -256,6 +256,39 @@ test('预算闸：compactNow 抛 busy 时不影响会话', async () => {
   // 没有崩就行：还能正常出报告
   const report = await fake.registry.get('fish_report').execute({}, { agent })
   assert.match(report, /鱼缸账本/)
+})
+
+test('作用范围：gate.scope 只对匹配 cwd 的会话动手', () => {
+  const fake = createFakeCtx()
+  for (const name of ['read', 'pwsh', 'workflow']) {
+    fake.ctx.tools.register({
+      name,
+      description: `${name} 说明`,
+      parameters: { type: 'object', properties: {} },
+      output: { schema: { type: 'string' }, render: () => [] },
+      async execute() {
+        return 'ok'
+      },
+    })
+  }
+  apply(fake.ctx, { gate: { enabled: true, scope: ['whale'], startGroups: [] } })
+  const bot = fake.agent('bot', 'C:\\Users\\x\\.dsh\\whale-work')
+  const coder = fake.agent('coder', 'C:\\Users\\x\\Documents\\code')
+  fake.emit('agent/created', { agent: bot }, undefined)
+  fake.emit('agent/created', { agent: coder }, undefined)
+
+  const botTools = fake.ctx.tools.schemas(bot).map((schema) => schema.name)
+  const coderTools = fake.ctx.tools.schemas(coder).map((schema) => schema.name)
+  assert.ok(!botTools.includes('pwsh'), '养鱼会话里 pwsh 应该休眠')
+  assert.ok(coderTools.includes('pwsh'), '写代码的会话不受影响')
+  assert.ok(coderTools.includes('workflow'))
+})
+
+test('装完不配置：零开销（不注册工具、不挂钩子）', () => {
+  const fake = createFakeCtx()
+  apply(fake.ctx, {})
+  assert.equal(fake.registry.size, 0, '默认配置下不该注册任何工具')
+  assert.equal((fake.listeners.get('session/event') ?? []).length, 0)
 })
 
 test('配置错误在 apply 阶段就炸，不会静默失效', () => {

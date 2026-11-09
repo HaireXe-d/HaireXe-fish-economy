@@ -10,10 +10,13 @@
     fish:
       enabled: true
       preset: work        # fs + shell 常开，其它八组睡觉
+    gate:
+      # 只对路径里带 whale 的会话动手；写代码的会话完全不受影响。
+      # 你的养鱼目录叫别的名字（fish / qq-bot…），就把这里换成那个词。
+      scope: ['whale']
+      autoEnable: true             # 你说"搜一下/看一下"时它会顺手把工具叫醒
     trim:
       enabled: true
       pruneToolResultChars: 2500   # 单条工具输出超过 2500 字就掐头去尾
     budget:
       compactAtTokens: 150000      # 上下文超过 15 万就压一次（默认 20 万）
-    gate:
-      autoEnable: true             # 你说"搜一下/看一下"时它会顺手把工具叫醒

@@ -9,6 +9,8 @@
     fish:
       enabled: true
       preset: chat
+    gate:
+      scope: ['whale']
     trim:
       enabled: true
       pruneToolResultChars: 2500

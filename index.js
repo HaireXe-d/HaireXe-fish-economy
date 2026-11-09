@@ -76,6 +76,15 @@ export function apply(ctx, rawConfig) {
     return
   }
 
+  // 装完不配置就是这种状态：一个工具都不注册、一个钩子都不挂，零开销。
+  // 想生效必须开 fish.enabled 或显式打开某个模块（README 第 3 步）。
+  const inert = !config.gate.enabled && !config.trim.enabled && !config.budget.enabled
+    && !config.ops.enabled && !config.fish.enabled && !config.prompt.enabled
+  if (inert) {
+    log('info', '已加载但未启用任何功能（装完不配置时的默认状态），不注册工具、不挂钩子')
+    return
+  }
+
   /** @type {WeakMap<object, object>} agent -> 闸门状态 */
   const agentStates = new WeakMap()
   /** 没有 agent 的调用（例如某些 scope-less 场景）落到这里。 */
@@ -123,12 +132,40 @@ export function apply(ctx, rawConfig) {
   function baselineOf(agent, state) {
     if (state.baseline !== undefined) return state.baseline
     try {
-      state.baseline = ctx.tools.schemas() ?? []
+      const tools = ctx.tools
+      // 优先用 view(agent).restrictableNames：它正好是 restrict() 允许点名的集合
+      // （继承来的全局工具），不会混进 agent 自己 scope 注册的工具（那会让整条
+      // deny 名单被拒）。view 不是声明层 API，所以取不到时退回 schemas(agent)。
+      const view = agent !== undefined && typeof tools.view === 'function' ? tools.view(agent) : undefined
+      const visible = tools.schemas(agent) ?? []
+      if (view?.restrictableNames !== undefined) {
+        const byName = new Map(visible.map((schema) => [schema.name, schema]))
+        state.baseline = [...view.restrictableNames].map((name) => byName.get(name) ?? { name, description: '', parameters: {} })
+        return state.baseline
+      }
+      state.baseline = visible
     } catch (error) {
       log('warn', `读取基线工具失败：${error instanceof Error ? error.message : String(error)}`)
       state.baseline = []
     }
     return state.baseline
+  }
+
+  /**
+   * 这个 agent 是否落在闸门作用范围内。
+   *
+   * `gate.scope` 是 cwd 子串列表，空数组表示"所有会话"。养鱼预设默认只作用于
+   * 路径里带 whale 的工作目录 —— 保证同一个 profile 里写代码的会话完全不受影响。
+   * 宁可少省一点，也不要让别的会话突然少一半工具。
+   * @param {object} agent agent。
+   * @returns {boolean} 是否在范围内。
+   */
+  function inScope(agent) {
+    const scope = config.gate.scope ?? []
+    if (scope.length === 0) return true
+    const cwd = String(agent?.session?.header?.cwd ?? '').toLowerCase()
+    if (cwd === '') return false
+    return scope.some((part) => cwd.includes(String(part).toLowerCase()))
   }
 
   /**
@@ -142,6 +179,18 @@ export function apply(ctx, rawConfig) {
     const state = stateOf(agent)
     const scoped = agent?.ctx?.tools
     if (scoped === undefined || typeof scoped.restrict !== 'function') return
+    if (!inScope(agent)) {
+      // 不在作用范围：确保没有任何生效的限制。
+      if (state.restriction !== undefined) {
+        try {
+          state.restriction()
+        } catch {
+          // 已失效
+        }
+        state.restriction = undefined
+      }
+      return
+    }
     const baseline = baselineOf(agent, state)
     const keep = computeKeepSet(
       baseline.map((schema) => schema.name),
@@ -260,6 +309,9 @@ export function apply(ctx, rawConfig) {
     output: { schema: { type: 'string' }, render: (_args, value) => [{ type: 'text', text: String(value) }] },
     async execute(args, exec) {
       const agent = exec?.agent
+      if (!inScope(agent)) {
+        return `本会话不在闸门范围内（gate.scope=${JSON.stringify(config.gate.scope)}），所有工具照常可用，没有休眠任何工具。`
+      }
       const state = stateOf(agent)
       const schemas = baselineOf(agent, state)
       const list = renderToolList(schemas, {
@@ -377,6 +429,7 @@ export function apply(ctx, rawConfig) {
     log,
     meter,
     agentOf: (session) => agentBySession.get(sessionId(session)),
+    inScope,
   })
 
   ctx.effect(() => {

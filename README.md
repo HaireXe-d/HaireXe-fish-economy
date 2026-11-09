@@ -49,20 +49,24 @@ git clone https://github.com/HaireXe-d/HaireXe-fish-economy.git
 
 ### 第 2 步：装进 DSH
 
-把下面的 `<库的路径>` 换成你解压/克隆出来的那个文件夹路径：
+把下面的 `<库的路径>` 换成你解压/克隆出来的那个文件夹路径，`<profile>` 换成你的 profile 名
+（桌面版一般是 `desktop`，网页版是 `web`；`~/.dsh/profiles/` 下有哪些文件夹，profile 就叫什么）：
 
 ```powershell
-dsh plugin --profile web add "<库的路径>"
+dsh plugin --profile <profile> add "<库的路径>"
 ```
 
-> 不用命令行也行：DSH → 设置 → 插件 → **从本地安装**，选这个文件夹，效果一样。
+> 不用命令行也行：DSH → 设置 → 插件 → **从本地安装**，选这个文件夹，效果一样（而且不用猜 profile）。
 > 提示 `找不到 dsh 命令`：说明你没把 DSH 的 CLI 加进 PATH，用上面这个图形界面装就行。
 
 装完打开 DSH → **设置 → 插件**，能看到「养鱼电费」这一张卡（包名 `dsh-fish-economy`），就是成功了。
 
+> 注意：**这一步之前插件是"关机"的**——不注册工具、不挂钩子、不改任何会话，纯粹零开销。
+> 只有做完第 3 步、重启之后它才开始干活。所以安装本身没有任何风险。
+
 ### 第 3 步：告诉它"我在养鱼"
 
-打开 `~/.dsh/profiles/web/cordis.patch.yml`，在最后加上这几行：
+打开 `~/.dsh/profiles/<profile>/cordis.patch.yml`，在最后加上这几行：
 
 ```yaml
 - id: fish-economy
@@ -74,13 +78,15 @@ dsh plugin --profile web add "<库的路径>"
 
 保存，重启 DSH。好了。
 
-> 懒得手写？仓库里有现成的 `configs/fish-work.yml` 和 `configs/fish-chat.yml`，整段复制粘贴就行。
+> 懒人版：仓库里的 `configs/fish-work.yml` 和 `configs/fish-chat.yml` 是现成的，整段复制粘贴就行。
 
 ---
 
 ## 四、两条鱼，各自怎么配
 
-两条鱼（QQ 那条、B 站那条）跑的是同一套东西，插件这边**不用区分**，你只要选一个"预设"：
+两条鱼（QQ 那条、B 站那条）跑的是同一套东西，插件这边**不用区分**，你只要选一个"预设"。
+两个预设都默认**只在养鱼的工作目录里生效**（路径里带 `whale`），同一个 profile 里写代码的会话
+一个工具都不会被收走——宁可少省一点，也不要吓到别的会话。
 
 ### QQ 养鱼 / B 站养鱼（会读日记、写日记、跑命令的）
 
@@ -88,7 +94,7 @@ dsh plugin --profile web add "<库的路径>"
 config:
   fish:
     enabled: true
-    preset: work      # fs + shell 常开，其它八组睡觉
+    preset: work      # fs + shell 常开，其它八组睡觉；只作用于 whale 工作目录
 ```
 
 为什么不能全关：实测你那条鱼 6469 次请求里调了 **5367 次工具**（一次请求平均 0.83 次），
@@ -103,12 +109,25 @@ config:
     preset: chat      # 工具全睡，只剩 4 个目录
 ```
 
+### 如果你的养鱼目录不叫 whale
+
+`scope` 是路径子串，看你的会话工作目录叫什么就填什么（比如 `fish`、`qq-bot`）：
+
+```yaml
+config:
+  fish:
+    enabled: true
+    preset: work
+  gate:
+    scope: ['fish']
+```
+
 ### 想更省一点（可选，加一条）
 
 默认压缩后还会保留约 16% 的记忆。想让记忆压得更狠，把下面这段也加上：
 
 ```powershell
-dsh --profile web --patch "<库的路径>\extras\compaction-aggressive.yml"
+dsh --profile <profile> --patch "<库的路径>\extras\compaction-aggressive.yml"
 ```
 
 加完之后记忆会稳定在 2 万～20 万之间（现在你是 27 万平均、66 万峰值）。
@@ -158,7 +177,7 @@ dsh --profile web --patch "<库的路径>\extras\compaction-aggressive.yml"
 **不想要了怎么卸？**
 
 ```powershell
-dsh plugin --profile web remove dsh-fish-economy
+dsh plugin --profile <profile> remove dsh-fish-economy
 ```
 
 卸完所有改动自动消失，配置文件不用回滚。

@@ -80,7 +80,8 @@ test('groups: 用户话术能命中要用的组', () => {
 
 test('config: 默认值 + 未知键报错 + 非法模式报错', () => {
   const config = resolveConfig({})
-  assert.equal(config.gate.enabled, true)
+  assert.equal(config.gate.enabled, false, '装完不配置时不动任何会话')
+  assert.equal(config.budget.enabled, false, '压缩默认关，避免偷偷改历史')
   assert.equal(config.ops.writes, false)
   assert.equal(config.trim.enabled, false)
   assert.throws(() => resolveConfig({ nope: 1 }), /未知配置项/)

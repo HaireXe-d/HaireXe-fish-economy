@@ -12,9 +12,12 @@
 export const DEFAULTS = Object.freeze({
   enabled: true,
   gate: Object.freeze({
-    enabled: true,
+    // 默认关闭：装完不做任何配置时，所有会话的行为和以前一模一样。
+    // 打开 fish.enabled 或显式写 gate.enabled: true 才生效。
+    enabled: false,
     startGroups: Object.freeze([]),
     alwaysGroups: Object.freeze([]),
+    scope: Object.freeze([]),
     autoEnable: true,
     ttlTurns: 0,
     overrides: Object.freeze({}),
@@ -28,7 +31,8 @@ export const DEFAULTS = Object.freeze({
     dedupeMinChars: 400,
   }),
   prompt: Object.freeze({
-    enabled: true,
+    // 默认关闭：不配置时连系统提示都不碰。
+    enabled: false,
     dedupeSections: true,
     dropSections: Object.freeze([]),
     maxSectionChars: 0,
@@ -40,13 +44,15 @@ export const DEFAULTS = Object.freeze({
     cachePricePerMTok: 0.2,
   }),
   budget: Object.freeze({
-    enabled: true,
+    // 默认关闭：压缩会改变会话历史，装完不乱动。
+    enabled: false,
     compactAtTokens: 200000,
     minIntervalMs: 60000,
     timeoutMs: 180000,
   }),
   ops: Object.freeze({
-    enabled: true,
+    // 默认关闭：装了不配置就什么都不注册（零开销）。
+    enabled: false,
     writes: false,
     allowOutside: false,
     maxChars: 20000,
@@ -71,7 +77,14 @@ export const DEFAULTS = Object.freeze({
  * 两者都开入口裁剪，并把阈值收紧到 2500 字符。
  */
 export const FISH_PRESET_WORK = Object.freeze({
-  gate: Object.freeze({ startGroups: Object.freeze(['fs', 'shell']), autoEnable: true, ttlTurns: 0 }),
+  gate: Object.freeze({
+    enabled: true,
+    startGroups: Object.freeze(['fs', 'shell']),
+    // 只作用于养鱼的工作目录（路径里带 whale），写代码的会话完全不受影响。
+    scope: Object.freeze(['whale']),
+    autoEnable: true,
+    ttlTurns: 0,
+  }),
   trim: Object.freeze({ enabled: true, mode: 'budget', pruneToolResultChars: 2500 }),
   prompt: Object.freeze({ enabled: true, dedupeSections: true }),
   ops: Object.freeze({ enabled: false }),
@@ -81,7 +94,13 @@ export const FISH_PRESET_WORK = Object.freeze({
 
 /** 纯聊天版：工具面归零。 */
 export const FISH_PRESET_CHAT = Object.freeze({
-  gate: Object.freeze({ startGroups: Object.freeze([]), autoEnable: true, ttlTurns: 0 }),
+  gate: Object.freeze({
+    enabled: true,
+    startGroups: Object.freeze([]),
+    scope: Object.freeze(['whale']),
+    autoEnable: true,
+    ttlTurns: 0,
+  }),
   trim: Object.freeze({ enabled: true, mode: 'budget', pruneToolResultChars: 2500 }),
   prompt: Object.freeze({ enabled: true, dedupeSections: true }),
   ops: Object.freeze({ enabled: false }),
@@ -159,6 +178,7 @@ export function resolveConfig(raw = {}) {
   assertStringArray('gate.startGroups', config.gate.startGroups)
   assertStringArray('gate.alwaysGroups', config.gate.alwaysGroups)
   assertStringArray('gate.pins', config.gate.pins)
+  assertStringArray('gate.scope', config.gate.scope)
   assertCount('gate.ttlTurns', config.gate.ttlTurns, true)
 
   if (!['dedupe', 'budget', 'off'].includes(config.trim.mode)) {
