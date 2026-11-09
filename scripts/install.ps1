@@ -13,7 +13,7 @@ $ErrorActionPreference = 'Stop'
 $here = Split-Path -Parent $PSScriptRoot
 
 Write-Host ''
-Write-Host '== 养鱼电费 · 安装 ==' -ForegroundColor Cyan
+Write-Host '== 养鱼经济学 · 安装 ==' -ForegroundColor Cyan
 Write-Host "插件目录：$here"
 Write-Host "目标 profile：$Profile"
 

@@ -323,7 +323,7 @@ export function apply(ctx, rawConfig) {
     async execute(args, exec) {
       const agent = exec?.agent
       if (!isOn()) {
-        return '养鱼经济学生效中是关闭的（设置 → 养鱼经济 里打开开关，或看 README）。现在没有休眠任何工具。'
+        return '养鱼经济学生效中是关闭的（设置 → 养鱼经济学 里打开开关，或看 README）。现在没有休眠任何工具。'
       }
       if (!inScope(agent)) {
         return `本会话不在闸门范围内（gate.scope=${JSON.stringify(config.gate.scope)}），所有工具照常可用，没有休眠任何工具。`

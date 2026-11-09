@@ -13,7 +13,7 @@ PROFILE="${1:-desktop}"
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 echo
-echo "== 养鱼电费 · 安装 =="
+echo "== 养鱼经济学 · 安装 =="
 echo "插件目录：$here"
 echo "目标 profile：$PROFILE"
 
