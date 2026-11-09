@@ -1,4 +1,4 @@
-# 养鱼电费（HaireXe-fish-economy）
+# 养鱼经济学（HaireXe-fish-economy）
 
 > 给你养的那条鱼省点电费。
 > QQ 的鱼、B 站的鱼，装完全都适用，一条命令，不用改你原来的插件。
