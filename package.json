@@ -7,12 +7,14 @@
   "main": "index.js",
   "exports": {
     ".": "./index.js",
+    "./client": "./lib/client.js",
     "./package.json": "./package.json",
     "./locale/*.json": "./locale/*.json",
     "./icon.svg": "./icon.svg"
   },
   "files": [
     "index.js",
+    "lib",
     "src",
     "bench",
     "configs",
@@ -24,6 +26,7 @@
     "cordis.patch.yml",
     "README.md",
     "NOTICE.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "icon": "./icon.svg",
@@ -50,6 +53,13 @@
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
     }
   },
   "engines": {

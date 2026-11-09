@@ -62,6 +62,8 @@ export const DEFAULTS = Object.freeze({
     preset: 'work',
     label: '',
   }),
+  /** 控制台开关文件路径；空 = $DSH_HOME/fish-economy/state.json */
+  statePath: '',
   debug: false,
 })
 

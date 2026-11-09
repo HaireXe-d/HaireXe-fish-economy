@@ -29,7 +29,7 @@ function setup(config = {}) {
       },
     })
   }
-  apply(fake.ctx, { gate: { enabled: true }, ops: { enabled: true }, ...config })
+  apply(fake.ctx, { gate: { enabled: true }, ops: { enabled: true }, statePath: join(tmpdir(), `fish-state-${process.pid}.json`), ...config })
   const agent = fake.agent('session-test-1', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   return { ...fake, agent }

@@ -26,6 +26,7 @@ import { formatTokens } from './token.js'
  *   meter: object,
  *   agentOf: (session: object) => object | undefined,
  *   inScope?: (agent: object) => boolean,
+ *   isOn?: () => boolean,
  * }} deps 依赖。
  * @returns {{ install: () => void, stats: () => object }} 模块。
  */
@@ -60,6 +61,7 @@ export function createBudget(ctx, config, deps) {
   function worthCompacting(agent, session) {
     const compaction = ctx.get('compaction')
     if (compaction === undefined || typeof compaction.compactNow !== 'function') return false
+    if (deps.isOn !== undefined && deps.isOn() !== true) return false
     if (deps.inScope !== undefined && deps.inScope(agent) !== true) return false
     const contextTokens = meter.contextOf(session)
     if (contextTokens < config.budget.compactAtTokens) return false

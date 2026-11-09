@@ -123,6 +123,7 @@ export function dedupeBatch(messages, options) {
 export function createTrim(ctx, config, deps) {
   const log = deps.log
   const meter = deps.meter
+  const isOn = typeof deps.isOn === 'function' ? deps.isOn : () => true
   const enabled = config.trim.enabled && config.trim.mode !== 'off'
   const stats = { trims: 0, removedChars: 0, duplicates: 0 }
 
@@ -135,7 +136,7 @@ export function createTrim(ctx, config, deps) {
    */
   async function onPostExecute(exec, result, next) {
     const decision = await next()
-    if (!enabled || decision.kind !== 'accept') return decision
+    if (!enabled || !isOn() || decision.kind !== 'accept') return decision
     const content = decision.content ?? result?.content
     if (!Array.isArray(content)) return decision
     let budget = config.trim.pruneToolResultChars
@@ -158,7 +159,7 @@ export function createTrim(ctx, config, deps) {
    */
   async function onPreStep(payload, next) {
     const decision = await next()
-    if (!enabled || config.trim.mode !== 'dedupe' || decision.kind !== 'enter') return decision
+    if (!enabled || !isOn() || config.trim.mode !== 'dedupe' || decision.kind !== 'enter') return decision
     if (!Array.isArray(decision.messages) || decision.messages.length === 0) return decision
     const result = dedupeBatch(decision.messages, { minChars: config.trim.dedupeMinChars })
     if (result.removed <= 0) return decision

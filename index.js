@@ -19,6 +19,7 @@
  */
 import { resolveConfig } from './src/config.js'
 import { createBudget } from './src/budget.js'
+import { readState, statePath, writeState } from './src/state.js'
 import {
   computeDenyList, computeKeepSet, groupIds, groupsForText, renderToolList, schemaBudget, toolsOfGroup,
 } from './src/gate.js'
@@ -97,6 +98,18 @@ export function apply(ctx, rawConfig) {
   }
 
   const meter = createMeter({ config, log })
+
+  // 控制台开关：state.json 里的 enabled 决定运行时开/关，改完约 1 秒生效。
+  const stateFile = statePath(config)
+  let runtimeOn = readState(stateFile).enabled
+
+  /**
+   * 运行时是否在干活（配置开着 + 控制台开关开着）。
+   * @returns {boolean} 是否生效。
+   */
+  function isOn() {
+    return config.enabled && runtimeOn === true
+  }
 
   /**
    * 取一个 agent 的闸门状态。
@@ -179,7 +192,7 @@ export function apply(ctx, rawConfig) {
     const state = stateOf(agent)
     const scoped = agent?.ctx?.tools
     if (scoped === undefined || typeof scoped.restrict !== 'function') return
-    if (!inScope(agent)) {
+    if (!isOn() || !inScope(agent)) {
       // 不在作用范围：确保没有任何生效的限制。
       if (state.restriction !== undefined) {
         try {
@@ -309,6 +322,9 @@ export function apply(ctx, rawConfig) {
     output: { schema: { type: 'string' }, render: (_args, value) => [{ type: 'text', text: String(value) }] },
     async execute(args, exec) {
       const agent = exec?.agent
+      if (!isOn()) {
+        return '养鱼经济学生效中是关闭的（设置 → 养鱼经济 里打开开关，或看 README）。现在没有休眠任何工具。'
+      }
       if (!inScope(agent)) {
         return `本会话不在闸门范围内（gate.scope=${JSON.stringify(config.gate.scope)}），所有工具照常可用，没有休眠任何工具。`
       }
@@ -423,13 +439,14 @@ export function apply(ctx, rawConfig) {
     }
   }, 'fish-economy: tool registration')
 
-  const trim = createTrim(ctx, config, { log, meter })
+  const trim = createTrim(ctx, config, { log, meter, isOn })
   const prompt = createPrompt(ctx, config, { log, meter, gate: { budgetFor } })
   const budget = createBudget(ctx, config, {
     log,
     meter,
     agentOf: (session) => agentBySession.get(sessionId(session)),
     inScope,
+    isOn,
   })
 
   ctx.effect(() => {
@@ -551,6 +568,126 @@ export function apply(ctx, rawConfig) {
   } catch (error) {
     log('debug', `扫描已存在 agent 失败：${error instanceof Error ? error.message : String(error)}`)
   }
+
+  // ---------------------------------------------------------------- 控制台开关
+  /**
+   * 给控制台卡片/HTTP 接口用的状态快照（全是数字，不含任何对话内容）。
+   * @returns {object} 状态。
+   */
+  function statusPayload() {
+    const ledger = meter.report('total')
+    return {
+      online: isOn(),
+      available: config.gate.enabled || config.trim.enabled || config.budget.enabled,
+      preset: config.fish.enabled ? config.fish.preset : 'off',
+      scope: config.gate.scope,
+      thresholds: {
+        compactAtTokens: config.budget.compactAtTokens,
+        pruneToolResultChars: config.trim.pruneToolResultChars,
+      },
+      ledger: {
+        requests: ledger.requests,
+        sessions: ledger.sessions,
+        perRequest: Math.round(ledger.perRequest),
+        schemaBaseline: ledger.schemaBaseline,
+        schemaAnnounced: ledger.schemaAnnounced,
+        schemaSaved: ledger.schemaSaved,
+        compactions: ledger.compactions,
+        compactedTokens: ledger.compactedTokens,
+        cacheHitRate: Number(ledger.cacheHitRate.toFixed(4)),
+        moneySaved: Number(ledger.moneySaved.toFixed(3)),
+      },
+      updatedAt: Date.now(),
+    }
+  }
+
+  /**
+   * 读请求体（限 64KB）。
+   * @param {object} req 请求。
+   * @returns {Promise<object>} JSON 对象。
+   */
+  async function readBody(req) {
+    let raw = ''
+    for await (const chunk of req) {
+      raw += chunk
+      if (raw.length > 65536) break
+    }
+    try {
+      return JSON.parse(raw.length === 0 ? '{}' : raw)
+    } catch {
+      return {}
+    }
+  }
+
+  /**
+   * HTTP 接口：GET 取状态，POST { enabled } 开关。
+   * @param {object} req 请求。
+   * @param {object} res 响应。
+   * @returns {Promise<void>} 完成。
+   */
+  async function onHttp(req, res) {
+    try {
+      if (req.method === 'GET') {
+        res.setHeader('content-type', 'application/json; charset=utf-8')
+        res.end(JSON.stringify(statusPayload()))
+        return
+      }
+      if (req.method === 'POST') {
+        const body = await readBody(req)
+        runtimeOn = body?.enabled !== false
+        writeState(stateFile, runtimeOn)
+        log('info', `控制台开关：${runtimeOn ? '开' : '关'}（来自设置页）`)
+        try {
+          for (const agent of ctx.get('agents')?.list?.() ?? []) sync(agent)
+        } catch {
+          // 没有 agent 服务时下一次 assembly 会自己同步
+        }
+        res.setHeader('content-type', 'application/json; charset=utf-8')
+        res.end(JSON.stringify(statusPayload()))
+        return
+      }
+      res.statusCode = 405
+      res.end('method not allowed')
+    } catch (error) {
+      res.statusCode = 500
+      res.end(String(error instanceof Error ? error.message : error))
+    }
+  }
+
+  if (typeof ctx.inject === 'function') {
+    ctx.inject(['webServer'], (webCtx) => {
+      const dispose = webCtx.webServer.register({
+        kind: 'exact',
+        path: '/fish-economy/api/state',
+        handler: onHttp,
+      })
+      return () => {
+        try {
+          dispose()
+        } catch {
+          // 路由已经跟着 server 一起没了
+        }
+      }
+    })
+  }
+
+  // 每秒看一次开关文件：设置页点了开关，这里约 1 秒内生效。
+  ctx.effect(() => {
+    if (!config.enabled) return undefined
+    const timer = setInterval(() => {
+      const next = readState(stateFile).enabled
+      if (next === runtimeOn) return
+      runtimeOn = next
+      log('info', `控制台开关：${runtimeOn ? '开' : '关'}（文件变化）`)
+      try {
+        for (const agent of ctx.get('agents')?.list?.() ?? []) sync(agent)
+      } catch {
+        // 同上
+      }
+    }, 1000)
+    if (typeof timer.unref === 'function') timer.unref()
+    return () => clearInterval(timer)
+  }, 'fish-economy: runtime switch')
 
   log('info', `已加载：闸门=${config.gate.enabled ? '开' : '关'} 瘦身=${config.trim.enabled ? config.trim.mode : '关'} ops=${config.ops.enabled ? '开' : '关'} 预算=${config.budget.enabled ? `${Math.round(config.budget.compactAtTokens / 1000)}K` : '关'}`)
 }
