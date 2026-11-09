@@ -29,7 +29,7 @@ function setup(config = {}) {
       },
     })
   }
-  apply(fake.ctx, { gate: { enabled: true }, ops: { enabled: true }, statePath: join(tmpdir(), `fish-state-${process.pid}.json`), ...config })
+  apply(fake.ctx, { gate: { enabled: true }, ops: { enabled: true }, statePath: join(tmpdir(), 'fish-budget-1.json'), ...config })
   const agent = fake.agent('session-test-1', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   return { ...fake, agent }
@@ -199,7 +199,7 @@ test('预算闸：上下文超过阈值时调用 compactNow', async () => {
       },
     },
   })
-  apply(fake.ctx, { budget: { enabled: true, compactAtTokens: 100000, minIntervalMs: 0 } })
+  apply(fake.ctx, { statePath: join(tmpdir(), 'fish-budget-2.json'), budget: { enabled: true, compactAtTokens: 100000, minIntervalMs: 0 } })
   const agent = fake.agent('s9', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   fake.broadcast('session/event', agent.session, {
@@ -225,7 +225,7 @@ test('预算闸：上下文低于阈值时不动作', async () => {
       },
     },
   })
-  apply(fake.ctx, { budget: { enabled: true, compactAtTokens: 100000, minIntervalMs: 0 } })
+  apply(fake.ctx, { statePath: join(tmpdir(), 'fish-budget-3.json'), budget: { enabled: true, compactAtTokens: 100000, minIntervalMs: 0 } })
   const agent = fake.agent('s10', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   fake.broadcast('session/event', agent.session, {
@@ -247,7 +247,7 @@ test('预算闸：compactNow 抛 busy 时不影响会话', async () => {
       },
     },
   })
-  apply(fake.ctx, { budget: { enabled: true, compactAtTokens: 1000, minIntervalMs: 0 } })
+  apply(fake.ctx, { statePath: join(tmpdir(), 'fish-budget-4.json'), budget: { enabled: true, compactAtTokens: 1000, minIntervalMs: 0 } })
   const agent = fake.agent('s11', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   fake.broadcast('session/event', agent.session, { type: 'assistant/message', data: { usage: { inputTokens: 5000 } } })

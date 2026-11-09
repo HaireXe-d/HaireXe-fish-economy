@@ -19,6 +19,7 @@
  */
 import { resolveConfig } from './src/config.js'
 import { createBudget } from './src/budget.js'
+import { createMessagePath } from './src/messages.js'
 import { readState, statePath, writeState } from './src/state.js'
 import {
   computeDenyList, computeKeepSet, groupIds, groupsForText, renderToolList, schemaBudget, toolsOfGroup,
@@ -451,6 +452,7 @@ export function apply(ctx, rawConfig) {
 
   const trim = createTrim(ctx, config, { log, meter, isOn })
   const prompt = createPrompt(ctx, config, { log, meter, gate: { budgetFor } })
+  const messages = createMessagePath(ctx, config, { log, meter, inScope, isOn })
   const budget = createBudget(ctx, config, {
     log,
     meter,
@@ -464,6 +466,7 @@ export function apply(ctx, rawConfig) {
     trim.install()
     prompt.install()
     budget.install()
+    messages.install()
     return () => {
       meter.flush()
     }
@@ -609,6 +612,8 @@ export function apply(ctx, rawConfig) {
         schemaSaved: ledger.schemaSaved,
         compactions: ledger.compactions,
         compactedTokens: ledger.compactedTokens,
+        messageCharsSaved: ledger.messageCharsSaved,
+        messageCompressions: ledger.messageCompressions,
         cacheHitRate: Number(ledger.cacheHitRate.toFixed(4)),
         moneySaved: Number(ledger.moneySaved.toFixed(3)),
       },

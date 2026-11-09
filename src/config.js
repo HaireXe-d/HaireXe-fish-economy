@@ -50,6 +50,13 @@ export const DEFAULTS = Object.freeze({
     minIntervalMs: 60000,
     timeoutMs: 180000,
   }),
+  messages: Object.freeze({
+    // 消息路径：投递前把"本会话已经发过的那段"压短（实测占入站字符的 81%）。
+    enabled: true,
+    mode: 'short',
+    minChars: 80,
+    keep: 200,
+  }),
   ops: Object.freeze({
     // 默认关闭：装了不配置就什么都不注册（零开销）。
     enabled: false,
@@ -199,6 +206,11 @@ export function resolveConfig(raw = {}) {
   assertCount('budget.compactAtTokens', config.budget.compactAtTokens)
   assertCount('budget.minIntervalMs', config.budget.minIntervalMs, true)
   assertCount('budget.timeoutMs', config.budget.timeoutMs)
+  if (!['short', 'full', 'off'].includes(config.messages.mode)) {
+    throw new Error(`dsh-fish-economy: messages.mode 只能是 short / full / off，收到 ${JSON.stringify(config.messages.mode)}`)
+  }
+  assertCount('messages.minChars', config.messages.minChars)
+  assertCount('messages.keep', config.messages.keep, true)
 
   for (const [groupId, names] of Object.entries(config.gate.overrides ?? {})) {
     assertStringArray(`gate.overrides.${groupId}`, names)
