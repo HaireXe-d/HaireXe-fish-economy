@@ -1,7 +1,29 @@
 # 鱼缸经济学 bundle 层：一整行挂上 Host 半边。
-# 客户端卡片（如果以后加）由 package.json 的 dsh.client 清单发现，不写在这里。
+# 客户端卡片（设置 → 养鱼经济学）由 package.json 的 dsh.client 清单发现，不写在这里。
+#
+# 这里给的是「装完就能用」的默认值：
+#   · 工具闸门开：fs + shell 常开，其余八组休眠（对养鱼机器人实测最合适）
+#   · 只作用于路径里带 whale 的会话（QQ / B 站养鱼默认工作目录就是这个）
+#   · 入口裁剪开、提示词去重开、自动压缩开
+# 想改任何一项：在你的 profile 的 cordis.patch.yml 里写同 id 的 config 覆盖即可，
+# 或者直接用设置页「养鱼经济学」卡片上的两个开关。
 - insert:
     - id: fish-economy
       name: 'dsh-fish-economy'
       config:
         enabled: true
+        fish:
+          enabled: true
+          preset: work
+        gate:
+          scope: ['whale']
+          autoEnable: true
+        trim:
+          enabled: true
+          pruneToolResultChars: 2500
+        prompt:
+          enabled: true
+          dedupeSections: true
+        budget:
+          enabled: true
+          compactAtTokens: 150000

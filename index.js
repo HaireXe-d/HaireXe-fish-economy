@@ -99,16 +99,26 @@ export function apply(ctx, rawConfig) {
 
   const meter = createMeter({ config, log })
 
-  // 控制台开关：state.json 里的 enabled 决定运行时开/关，改完约 1 秒生效。
+  // 控制台开关：state.json 里的两个字段决定运行时开/关，改完约 1 秒生效。
+  //   enabled     总开关
+  //   compaction  压缩会话（只影响预算闸，闸门和裁剪不受影响）
   const stateFile = statePath(config)
-  let runtimeOn = readState(stateFile).enabled
+  let runtimeState = readState(stateFile)
 
   /**
-   * 运行时是否在干活（配置开着 + 控制台开关开着）。
+   * 总开关：运行时是否在干活（配置开着 + 控制台总开关开着）。
    * @returns {boolean} 是否生效。
    */
   function isOn() {
-    return config.enabled && runtimeOn === true
+    return config.enabled && runtimeState.enabled === true
+  }
+
+  /**
+   * 压缩会话：总开关开着 + 卡片上的压缩开关开着 + 配置里没把预算闸关掉。
+   * @returns {boolean} 是否允许自动压缩。
+   */
+  function compactionOn() {
+    return isOn() && config.budget.enabled === true && runtimeState.compaction !== false
   }
 
   /**
@@ -446,7 +456,8 @@ export function apply(ctx, rawConfig) {
     meter,
     agentOf: (session) => agentBySession.get(sessionId(session)),
     inScope,
-    isOn,
+    // 预算闸看的是"压缩会话"这个开关，不看总开关本身：总开关一关，compactionOn 也是 false。
+    isOn: compactionOn,
   })
 
   ctx.effect(() => {
@@ -579,6 +590,10 @@ export function apply(ctx, rawConfig) {
     return {
       online: isOn(),
       available: config.gate.enabled || config.trim.enabled || config.budget.enabled,
+      compaction: {
+        configured: config.budget.enabled === true,
+        enabled: compactionOn(),
+      },
       preset: config.fish.enabled ? config.fish.preset : 'off',
       scope: config.gate.scope,
       thresholds: {
@@ -620,7 +635,7 @@ export function apply(ctx, rawConfig) {
   }
 
   /**
-   * HTTP 接口：GET 取状态，POST { enabled } 开关。
+   * HTTP 接口：GET 取状态，POST { enabled?, compaction? } 改开关。
    * @param {object} req 请求。
    * @param {object} res 响应。
    * @returns {Promise<void>} 完成。
@@ -634,13 +649,17 @@ export function apply(ctx, rawConfig) {
       }
       if (req.method === 'POST') {
         const body = await readBody(req)
-        runtimeOn = body?.enabled !== false
-        writeState(stateFile, runtimeOn)
-        log('info', `控制台开关：${runtimeOn ? '开' : '关'}（来自设置页）`)
-        try {
-          for (const agent of ctx.get('agents')?.list?.() ?? []) sync(agent)
-        } catch {
-          // 没有 agent 服务时下一次 assembly 会自己同步
+        const patch = {}
+        if (typeof body?.enabled === 'boolean') patch.enabled = body.enabled
+        if (typeof body?.compaction === 'boolean') patch.compaction = body.compaction
+        if (Object.keys(patch).length > 0) {
+          runtimeState = writeState(stateFile, patch)
+          log('info', `控制台开关：${runtimeState.enabled ? '开' : '关'} / 压缩：${runtimeState.compaction ? '开' : '关'}（来自设置页）`)
+          try {
+            for (const agent of ctx.get('agents')?.list?.() ?? []) sync(agent)
+          } catch {
+            // 没有 agent 服务时下一次 assembly 会自己同步
+          }
         }
         res.setHeader('content-type', 'application/json; charset=utf-8')
         res.end(JSON.stringify(statusPayload()))
@@ -675,10 +694,10 @@ export function apply(ctx, rawConfig) {
   ctx.effect(() => {
     if (!config.enabled) return undefined
     const timer = setInterval(() => {
-      const next = readState(stateFile).enabled
-      if (next === runtimeOn) return
-      runtimeOn = next
-      log('info', `控制台开关：${runtimeOn ? '开' : '关'}（文件变化）`)
+      const next = readState(stateFile)
+      if (next.enabled === runtimeState.enabled && next.compaction === runtimeState.compaction) return
+      runtimeState = next
+      log('info', `控制台开关：${runtimeState.enabled ? '开' : '关'} / 压缩：${runtimeState.compaction ? '开' : '关'}（文件变化）`)
       try {
         for (const agent of ctx.get('agents')?.list?.() ?? []) sync(agent)
       } catch {
