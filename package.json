@@ -1,6 +1,6 @@
 {
   "name": "dsh-fish-economy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "鱼缸经济学：工具懒加载（tool_list）+ 上下文入口裁剪 + 原生批量文件操作，一个插件砍掉 DSH 请求里三处重复开销，自带 token 账本。",
   "private": true,
   "type": "module",

@@ -1,8 +1,9 @@
 # QQ 养鱼 / B 站养鱼（会读写日记、会跑命令的那条鱼）
 #
-# 用法：整段复制到 ~/.dsh/profiles/web/cordis.patch.yml 的末尾，保存后重启 DSH。
-# 没有这一段的话，插件会按"默认配置"跑（工具闸门开、裁剪开、预算 200K），
-# 但不会自动套上养鱼专门的那几个值。
+# 什么时候需要这个文件：只有想改默认值的时候。
+# 插件装完自带默认配置（五把刀全开、只作用于 whale 目录），直接用就行，不用抄这段。
+#
+# 用法：整段复制到 ~/.dsh/profiles/<你的 profile>/cordis.patch.yml 的末尾，保存后重启 DSH。
 
 - id: fish-economy
   config:
@@ -18,5 +19,11 @@
     trim:
       enabled: true
       pruneToolResultChars: 2500   # 单条工具输出超过 2500 字就掐头去尾
+    messages:
+      enabled: true                # 投消息前把重复段落压成一句「后面同上」
+      mode: short
+    steps:
+      enabled: true                # 加一句"能一次做完别拆多步"的提醒
     budget:
+      enabled: true
       compactAtTokens: 150000      # 上下文超过 15 万就压一次（默认 20 万）

@@ -220,8 +220,13 @@ dsh --profile <profile> --patch "<库的路径>\extras\compaction-aggressive.yml
 
 **方法三：看冷启动日志**
 
-启动 DSH 时如果能看到 `[fish-economy] info: 已加载：闸门=开 瘦身=budget ops=关 预算=150K`，
-说明四个开关都上了。
+启动 DSH 时如果能看到：
+
+```
+[fish-economy] info: 已加载： 闸门=开 裁剪=budget 消息=short 步骤=开 压缩=150K ops=关
+```
+
+说明五个开关都上了（`压缩=关` 表示你在卡片上把压缩会话关了）。
 
 ---
 

@@ -1,18 +1,23 @@
 # 纯聊天鱼（从不读文件、不跑命令）
 #
-# 用法：整段复制到 ~/.dsh/profiles/web/cordis.patch.yml 的末尾，保存后重启 DSH。
-# 和 work 版的区别只有一行：preset 换成 chat，工具全部睡觉，只剩 4 个"目录"工具。
+# 什么时候需要这个文件：只有想改成"工具全睡"的时候。默认是 work 版。
+# 用法：整段复制到 ~/.dsh/profiles/<你的 profile>/cordis.patch.yml 的末尾，保存后重启 DSH。
 
 - id: fish-economy
   config:
     enabled: true
     fish:
       enabled: true
-      preset: chat
+      preset: chat        # 和 work 版的区别：工具全部睡觉，只剩 4 个"目录"工具
     gate:
       scope: ['whale']
     trim:
       enabled: true
       pruneToolResultChars: 2500
+    messages:
+      enabled: true
+    steps:
+      enabled: true
     budget:
+      enabled: true
       compactAtTokens: 150000
