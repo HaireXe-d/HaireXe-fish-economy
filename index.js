@@ -725,5 +725,13 @@ export function apply(ctx, rawConfig) {
     return () => clearInterval(timer)
   }, 'fish-economy: runtime switch')
 
-  log('info', `已加载：闸门=${config.gate.enabled ? '开' : '关'} 瘦身=${config.trim.enabled ? config.trim.mode : '关'} ops=${config.ops.enabled ? '开' : '关'} 预算=${config.budget.enabled ? `${Math.round(config.budget.compactAtTokens / 1000)}K` : '关'}`)
+  log('info', [
+    '已加载：',
+    `闸门=${config.gate.enabled ? '开' : '关'}`,
+    `裁剪=${config.trim.enabled ? config.trim.mode : '关'}`,
+    `消息=${config.messages.enabled ? config.messages.mode : '关'}`,
+    `步骤=${config.steps.enabled ? '开' : '关'}`,
+    `压缩=${config.budget.enabled ? `${Math.round(config.budget.compactAtTokens / 1000)}K` : '关'}`,
+    `ops=${config.ops.enabled ? '开' : '关'}`,
+  ].join(' '))
 }

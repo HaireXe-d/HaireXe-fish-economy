@@ -109,7 +109,7 @@ test('assemble 记账：工具成本与瘦身都在里面', async () => {
       },
     })
   }
-  apply(fake.ctx, { prompt: { enabled: true } })
+  apply(fake.ctx, { statePath: join(tmpdir(), 'fish-prompt-1.json'), prompt: { enabled: true } })
   const agent = fake.agent('s2', process.cwd())
   fake.emit('agent/created', { agent }, undefined)
   const assembly = {
@@ -130,7 +130,7 @@ test('assemble 记账：工具成本与瘦身都在里面', async () => {
 
 test('tools/post-execute：超长结果被裁剪（trim 打开时）', async () => {
   const fake = createFakeCtx()
-  apply(fake.ctx, { trim: { enabled: true, mode: 'budget', pruneToolResultChars: 1000 } })
+  apply(fake.ctx, { statePath: join(tmpdir(), 'fish-trim-1.json'), trim: { enabled: true, mode: 'budget', pruneToolResultChars: 1000 } })
   const content = [{ type: 'text', text: 'y'.repeat(20000) }]
   const decision = await fake.emitArgs('tools/post-execute', [{ name: 'read', agent: undefined }, { content }], { kind: 'accept' })
   assert.ok(decision.content[0].text.length < 20000)
@@ -271,7 +271,7 @@ test('作用范围：gate.scope 只对匹配 cwd 的会话动手', () => {
       },
     })
   }
-  apply(fake.ctx, { gate: { enabled: true, scope: ['whale'], startGroups: [] } })
+  apply(fake.ctx, { statePath: join(tmpdir(), 'fish-scope-1.json'), gate: { enabled: true, scope: ['whale'], startGroups: [] } })
   const bot = fake.agent('bot', 'C:\\Users\\x\\.dsh\\whale-work')
   const coder = fake.agent('coder', 'C:\\Users\\x\\Documents\\code')
   fake.emit('agent/created', { agent: bot }, undefined)
