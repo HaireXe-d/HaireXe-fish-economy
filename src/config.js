@@ -51,11 +51,17 @@ export const DEFAULTS = Object.freeze({
     timeoutMs: 180000,
   }),
   messages: Object.freeze({
-    // 消息路径：投递前把"本会话已经发过的那段"压短（实测占入站字符的 81%）。
-    enabled: true,
+    // 消息路径：投递前把"本会话已经发过的那段"压短（实测占入站字符的 67.5%）。
+    // 默认关，由 fish 预设和 bundle 默认值打开，保证"装完不配置=零开销"。
+    enabled: false,
     mode: 'short',
     minChars: 80,
     keep: 200,
+  }),
+  steps: Object.freeze({
+    // 省步骤：给养鱼会话加一句"能一次做完别拆三步"的短提示（约 60 token/请求）。
+    enabled: false,
+    hint: '【省步骤】能一次做完的别拆成多步；同一步能并行调用的工具就并行；不要为了确认再单独读一遍刚读过的内容。',
   }),
   ops: Object.freeze({
     // 默认关闭：装了不配置就什么都不注册（零开销）。
@@ -95,8 +101,11 @@ export const FISH_PRESET_WORK = Object.freeze({
     ttlTurns: 0,
   }),
   trim: Object.freeze({ enabled: true, mode: 'budget', pruneToolResultChars: 2500 }),
+  messages: Object.freeze({ enabled: true }),
   prompt: Object.freeze({ enabled: true, dedupeSections: true }),
   ops: Object.freeze({ enabled: false }),
+  // 实测每条消息 5.5 次请求、每次 272K：少拆一步就少一次整段重发，所以默认开。
+  steps: Object.freeze({ enabled: true }),
   // 养鱼会话从没触发过压缩（峰值 664K），所以阈值压到 150K：一超过就压。
   budget: Object.freeze({ enabled: true, compactAtTokens: 150000 }),
 })
@@ -111,8 +120,10 @@ export const FISH_PRESET_CHAT = Object.freeze({
     ttlTurns: 0,
   }),
   trim: Object.freeze({ enabled: true, mode: 'budget', pruneToolResultChars: 2500 }),
+  messages: Object.freeze({ enabled: true }),
   prompt: Object.freeze({ enabled: true, dedupeSections: true }),
   ops: Object.freeze({ enabled: false }),
+  steps: Object.freeze({ enabled: true }),
   budget: Object.freeze({ enabled: true, compactAtTokens: 150000 }),
 })
 
@@ -211,6 +222,9 @@ export function resolveConfig(raw = {}) {
   }
   assertCount('messages.minChars', config.messages.minChars)
   assertCount('messages.keep', config.messages.keep, true)
+  if (typeof config.steps.hint !== 'string' || config.steps.hint.trim() === '') {
+    throw new Error('dsh-fish-economy: steps.hint 必须是非空字符串')
+  }
 
   for (const [groupId, names] of Object.entries(config.gate.overrides ?? {})) {
     assertStringArray(`gate.overrides.${groupId}`, names)

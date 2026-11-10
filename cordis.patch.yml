@@ -27,3 +27,9 @@
         budget:
           enabled: true
           compactAtTokens: 150000
+        messages:
+          enabled: true
+          mode: short
+          keep: 200
+        steps:
+          enabled: true

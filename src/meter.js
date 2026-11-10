@@ -42,6 +42,7 @@ export function emptySession(id) {
     compactedTokens: 0,
     messageCharsSaved: 0,
     messageCompressions: 0,
+    steps: 0,
     updatedAt: 0,
   }
 }
@@ -135,6 +136,17 @@ export function createMeter(options) {
   }
 
   /**
+   * 记一步（step/start）：用来算"每条消息跑了几步"。
+   * @param {object} session 会话。
+   * @returns {void}
+   */
+  function recordStep(session) {
+    if (!config.meter.enabled) return
+    sessionOf(session).steps += 1
+    dirty = true
+  }
+
+  /**
    * 记一次裁剪。
    * @param {object} session 会话。
    * @param {number} chars 省下的字符数。
@@ -196,7 +208,7 @@ export function createMeter(options) {
     const rows = scope === 'session' && list.length > 0 ? [list[list.length - 1]] : list
     const sum = emptySession(scope === 'session' ? rows[0]?.id ?? 'session' : 'total')
     for (const row of rows) {
-      for (const key of ['turns', 'requests', 'inputTokens', 'outputTokens', 'cacheReadTokens', 'cacheWriteTokens', 'schemaSaved', 'trimCharsSaved', 'trims', 'compactions', 'compactedTokens', 'messageCharsSaved', 'messageCompressions']) {
+      for (const key of ['turns', 'requests', 'inputTokens', 'outputTokens', 'cacheReadTokens', 'cacheWriteTokens', 'schemaSaved', 'trimCharsSaved', 'trims', 'compactions', 'compactedTokens', 'messageCharsSaved', 'messageCompressions', 'steps']) {
         sum[key] += row[key] ?? 0
       }
       sum.schemaBaseline = Math.max(sum.schemaBaseline, row.schemaBaseline)
@@ -231,6 +243,8 @@ export function createMeter(options) {
       compactedTokens: sum.compactedTokens,
       messageCharsSaved: sum.messageCharsSaved,
       messageCompressions: sum.messageCompressions,
+      steps: sum.steps,
+      stepsPerTurn: sum.turns === 0 ? 0 : sum.steps / sum.turns,
       moneySaved: (savedBillable / 1_000_000) * config.meter.pricePerMTok,
       moneySpent: (billable / 1_000_000) * config.meter.pricePerMTok,
     }
@@ -249,6 +263,7 @@ export function createMeter(options) {
     lines.push(`  工具定义：${formatTokens(data.schemaBaseline)} → ${formatTokens(data.schemaAnnounced)} token/请求`)
     lines.push(`  闸门累计省：${formatTokens(data.schemaSaved)} token（折算计费 ${formatTokens(data.savedBillable)}）`)
     if (data.trimCharsSaved > 0) lines.push(`  裁剪累计省：${formatTokens(Math.round(data.trimCharsSaved / 1.6))} token（${data.trims} 次）`)
+    if (data.steps > 0) lines.push(`  步骤：${data.steps} 步 / ${data.turns} 轮 = 每轮 ${data.stepsPerTurn.toFixed(1)} 步（每步都是一次整段重发）`)
     if (data.messageCharsSaved > 0) lines.push(`  消息路径省：${formatTokens(Math.round(data.messageCharsSaved / 2.2))} token（${data.messageCompressions} 条消息里的重复段落被压短）`)
     if (data.compactions > 0) lines.push(`  预算闸压缩：${data.compactions} 次，共释放 ${formatTokens(data.compactedTokens)} token（平均上下文 ${formatTokens(data.perRequest)}/请求）`)
     lines.push(`  真实用量：总 ${formatTokens(data.totalTokens)}，其中输入 ${formatTokens(data.inputTokens)}、输出 ${formatTokens(data.outputTokens)}、缓存读 ${formatTokens(data.cacheReadTokens)}`)
@@ -281,6 +296,7 @@ export function createMeter(options) {
     recordAssembly,
     recordUsage,
     recordTurn,
+    recordStep,
     recordTrim,
     recordCompaction,
     recordMessage,

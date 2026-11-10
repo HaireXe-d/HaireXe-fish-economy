@@ -20,6 +20,7 @@
 import { resolveConfig } from './src/config.js'
 import { createBudget } from './src/budget.js'
 import { createMessagePath } from './src/messages.js'
+import { createSteps } from './src/steps.js'
 import { readState, statePath, writeState } from './src/state.js'
 import {
   computeDenyList, computeKeepSet, groupIds, groupsForText, renderToolList, schemaBudget, toolsOfGroup,
@@ -82,6 +83,7 @@ export function apply(ctx, rawConfig) {
   // 想生效必须开 fish.enabled 或显式打开某个模块（README 第 3 步）。
   const inert = !config.gate.enabled && !config.trim.enabled && !config.budget.enabled
     && !config.ops.enabled && !config.fish.enabled && !config.prompt.enabled
+    && !config.messages.enabled && !config.steps.enabled
   if (inert) {
     log('info', '已加载但未启用任何功能（装完不配置时的默认状态），不注册工具、不挂钩子')
     return
@@ -453,6 +455,7 @@ export function apply(ctx, rawConfig) {
   const trim = createTrim(ctx, config, { log, meter, isOn })
   const prompt = createPrompt(ctx, config, { log, meter, gate: { budgetFor } })
   const messages = createMessagePath(ctx, config, { log, meter, inScope, isOn })
+  const steps = createSteps(ctx, config, { log, inScope, isOn })
   const budget = createBudget(ctx, config, {
     log,
     meter,
@@ -467,7 +470,13 @@ export function apply(ctx, rawConfig) {
     prompt.install()
     budget.install()
     messages.install()
+    const disposeSteps = steps.install()
     return () => {
+      try {
+        disposeSteps?.()
+      } catch {
+        // 卸载期的失败不影响别的插件
+      }
       meter.flush()
     }
   }, 'fish-economy: context modules')
@@ -565,6 +574,7 @@ export function apply(ctx, rawConfig) {
     try {
       if (event?.type === 'assistant/message') meter.recordUsage(session, event.data?.usage)
       else if (event?.type === 'turn/end') meter.recordTurn(session)
+      else if (event?.type === 'step/start') meter.recordStep(session)
     } catch (error) {
       log('debug', `记账失败：${error instanceof Error ? error.message : String(error)}`)
     }
@@ -614,6 +624,8 @@ export function apply(ctx, rawConfig) {
         compactedTokens: ledger.compactedTokens,
         messageCharsSaved: ledger.messageCharsSaved,
         messageCompressions: ledger.messageCompressions,
+        steps: ledger.steps,
+        stepsPerTurn: Number((ledger.stepsPerTurn ?? 0).toFixed(2)),
         cacheHitRate: Number(ledger.cacheHitRate.toFixed(4)),
         moneySaved: Number(ledger.moneySaved.toFixed(3)),
       },
