@@ -13,6 +13,8 @@
     "./icon.svg": "./icon.svg"
   },
   "files": [
+    "install.mjs",
+    "安装.bat",
     "index.js",
     "lib",
     "src",
